@@ -1,0 +1,17 @@
+################################### uCon II ###################################
+
+Repositorio destinado ao desenvolvimento do Capture The Flag da segunda versão
+da uCon Security Conference.
+
+O foco dos desafios é a exploração de falhas em aplicações hospedadas em ambi-
+ente que simula situações reais. Varias tecnicas de exploração podem devem ser
+exploradas nesse projeto como: Stack e Heap Overflow, format string, Cracking e
+Engenharia reversa de código. Os desafios serão desenvolvidos para funcionarem
+com a arquitetura Intel IA32 e usando o Sistema Operacional Linux. Os desafios,
+além de serem categorizados, devem ser separados em níveis de dificuldade, de
+forma que quanto maior o nível maior a pontuação caso um participante venha a
+chegar a solução.
+
+
+
+18 Janeiro 2009                        Marcos Alvares <marcos.alvares at gmail>
