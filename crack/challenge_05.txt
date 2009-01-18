@@ -1,0 +1,20 @@
+- uCon Security Conference - Feb 2009 - Recife Pernambuco Brazil
+
+::. Challenge 05 .:: 
+	- Category:	Crack
+	- Level:	01
+
+- Format:
+	
+	Binary Format:		ELF, static
+	Operating System:	Linux
+	Architecture:		Intel 32 bits
+	Build: 				Debug mode 
+
+- Objective:
+
+	Make reverse engineer to discover the software password. When you enter a
+	correct password, a 'bang !' message will appear on the screen. This code
+	changes the password with the time of machine like a bank token. This code
+	uses a small obfuscation function with a rot13 algorithm.
+	

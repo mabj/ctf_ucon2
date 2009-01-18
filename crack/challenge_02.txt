@@ -1,0 +1,19 @@
+- uCon Security Conference - Feb 2009 - Recife Pernambuco Brazil
+
+::. Challenge 02 .:: 
+	- Category:	Crack
+	- Level:	01
+
+- Format:
+	
+	Binary Format:		ELF, static
+	Operating System:	Linux
+	Architecture:		Intel 32 bits
+	Build: 				Debug mode 
+
+- Objective:
+
+	Make reverse engineer to discover the software password. When you enter a
+	correct password, a 'bang !' message will appear on the screen. This code
+	have the password hardcode into the source. This is trivially bypassed
+	using a object dump method. 

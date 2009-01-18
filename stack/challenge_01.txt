@@ -1,0 +1,21 @@
+- uCon Security Conference - Feb 2009 - Recife Pernambuco Brazil
+
+::. Challenge 01 .::
+  - Category:   Stack
+  - Level:      01
+  - Author:     Marcos Alvares <marcos.alvares at gmail>
+
+- Format:
+
+  Binary Format:      ELF, static
+  Source Code:        C ANSI
+  Operating System:   Linux
+  Architecture:       Intel 32 bits
+  Build:              Debug mode, without stack guard GCC optimization
+                      without kernel stack randomization
+
+- Objective:
+
+  Find and exploit the stack buffer overflow bug. This is the simplest
+  stack exploitation test the attacker just need override the %eip with
+  the instruction address to the if statement.

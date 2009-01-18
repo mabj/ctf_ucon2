@@ -1,0 +1,20 @@
+- uCon Security Conference - Feb 2009 - Recife Pernambuco Brazil
+
+::. Challenge 01 .:: 
+	- Category:	Crack
+	- Level:	03
+
+- Format:
+	
+	Binary Format:		ELF, static
+	Operating System:	Linux
+	Architecture:		Intel 32 bits
+	Build: 				Debug mode 
+
+- Objective:
+
+	Make reverse engineer to discover the software password. When you enter a
+	correct password, a 'bang !' message will appear on the screen. This code
+	is strings dump safe and use a simple XOR to obfuscate the password. The
+	encrypted password contain non printable characters making this code a
+	little more difficulty to exploit with trivial methods. 

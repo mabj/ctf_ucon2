@@ -1,0 +1,23 @@
+- uCon Security Conference - Feb 2009 - Recife Pernambuco Brazil
+
+::. Challenge 04 .::
+  - Category:   Stack
+  - Level:      02
+  - Author:     Marcos Alvares <marcos.alvares at gmail>
+
+- Format:
+
+  Binary Format:      ELF, static
+  Source Code:        C ANSI
+  Operating System:   Linux
+  Architecture:       Intel 32 bits
+  Build:              Debug mode, without stack guard GCC optimization
+                      without kernel stack randomization
+
+- Objective:
+
+  Find and exploit the stack buffer overflow bug. This code has a
+  stack check if the stack canary was override the software will exit.
+  This forces the attacker to insert a exact portion of data to
+  override the return point. This canary is generated throuth a pseudo
+  random algorithm.
