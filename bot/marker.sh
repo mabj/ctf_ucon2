@@ -1,19 +1,22 @@
 #!/bin/bash
 
+ECHO="/usr/bin/echo"
+CAT="/usr/bin/cat"
+WHOAMI="/usr/bin/whoami"
+
+
 #initializing and tests
 PROGRAM_NAME=${0}
 
 REGISTER_FILE="/ctf_ucon2/registered_ids"
-#REGISTERED_IDS=`cat $REGISTER_FILE`
-REGISTERED_IDS="rafael julio marcos"
+REGISTERED_IDS=`${CAT} ${REGISTER_FILE}`
 
-TAG_FILE=`whoami`.tags
-TAGGED_IDS=`cat ${TAG_FILE}`
+TAG_FILE="/ctf_ucon2/`${WHOAMI}`.tags"
+TAGGED_IDS=`${CAT} ${TAG_FILE}`
 
 #the register and tag files are needed! <<< ATENTION
 #they should exist previously to this script execution
 #attention to they permissions and attributes
-touch ${TAG_FILE}
 
 #end of initialization and tests
 
@@ -28,14 +31,14 @@ touch ${TAG_FILE}
 
 #auxiliary functions
 function helper() {
-	echo " ----------- [${PROGRAM_NAME}] ----------- "
-	echo -e " ::. ${1} "
-	echo ""
+	${ECHO} " ----------- [${PROGRAM_NAME}] ----------- "
+	${ECHO} -e " ::. ${1} "
+	${ECHO} ""
 }
 
 function check_input() {
 	#the user must provide an id
-	if [ ${#} != 1 ]; then
+	if [[ ${#} != 1 ]]; then
 		return 1
 	else #everything is ok
 		return 0
@@ -45,7 +48,7 @@ function check_input() {
 function id_is_registered() {
 	ID=${1}
 	for I in ${REGISTERED_IDS}; do
-		if [ ${I} = ${ID} ]; then
+		if [[ ${I} = ${ID} ]]; then
 			return 0 #id found in id file
 		fi
 	done
@@ -55,11 +58,11 @@ function id_is_registered() {
 function id_is_tagged() {
 	ID=${1}
 	for I in ${TAGGED_IDS}; do
-		if [ ${I} = ${ID} ]; then
-			return 0 #id found in id file
+		if [[ ${I} = ${ID} ]]; then
+			return 0 #id found in tag file
 		fi
 	done
-	return 1 #id not found (invalid id)
+	return 1 #id is not in tag file
 }
 #end of auxiliary functions
 
@@ -67,29 +70,25 @@ function id_is_tagged() {
 
 
 
-
-
-
-
 #checking if a input was provided
 check_input ${@}
-if [ ${?} -eq 1 ]; then
+if [[ ${?} -eq 1 ]]; then
 	helper "Usage: ${PROGRAM_NAME} <userid>"
 	exit 1
 fi
 
 #checking if the input is a valid user id
 id_is_registered ${1}
-if [ ${?} -eq 1 ]; then
+if [[ ${?} -eq 1 ]]; then
 	helper "Please use a valid id!"
 	exit 1
 fi
 
 #check if the level is already tagged
 id_is_tagged ${1}
-if [ ${?} -eq 1 ]; then
+if [[ ${?} -eq 1 ]]; then
 	#appending ID to the tag file
-	echo ${1} >> ${TAG_FILE}
+	${ECHO} ${1} >> ${TAG_FILE}
 	helper "Tagging this level now!!"
 else
 	helper "You already tagged this level!"
