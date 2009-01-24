@@ -1,19 +1,20 @@
 - uCon Security Conference - Feb 2009 - Recife Pernambuco Brazil
 
-::. Challenge 03 .:: 
-	- Category:	Crack
-	- Level:	02
+::. Challenge 03 .::
+  - Category:  Crack
+  - Level:     02
+  - Author:    Marcos Alvares <marcos.alvares gmail>
 
 - Format:
-	
-	Binary Format:		ELF, static
-	Operating System:	Linux
-	Architecture:		Intel 32 bits
-	Build: 				Debug mode 
+
+  Binary Format:      ELF, static
+  Operating System:   Linux
+  Architecture:       Intel 32 bits
+  Build:              Debug mode
 
 - Objective:
 
-	Make reverse engineer to discover the software password. When you enter a
-	correct password, a 'bang !' message will appear on the screen. This code
-	have a salt on the password. The password and the salt are printed on the
-	screen using a object dump method.
+  Make reverse engineer to discover the software password. When you enter a
+  correct password, a 'bang !' message will appear on the screen. This code
+  have a salt on the password. The password and the salt are printed on the
+  screen using a object dump method.

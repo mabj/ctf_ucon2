@@ -21,40 +21,40 @@ int __is_valid_pwd (char *pwd);
 char *__obfuscation (char *pwd, char *key);
 
 int main (int argc, char *argv[]) {
-	if (argc != 2) {
-		__print_sw_title(argv[0]);
-		return ERRO;
-	}
-	
-	if ( __is_valid_pwd(argv[1]) ) {
-		// This space is reserved to grant privileges to a successful attack
-		printf("\n +-+ Bang ! +-+ \n");
-	} else {
-		printf("\n Shut your fucking face, uncle fucka! \n");
-	}
+  if (argc != 2) {
+    __print_sw_title(argv[0]);
+    return ERRO;
+  }
 
-	return OK;
+  if ( __is_valid_pwd(argv[1]) ) {
+    // This space is reserved to grant privileges to a successful attack
+    printf("\n +-+ Bang ! +-+ \n");
+  } else {
+    printf("\n Shut your fucking face, uncle fucka! \n");
+  }
+
+  return OK;
 }
 
 int __is_valid_pwd (char *pwd) {
-	if (! strncmp(JOKER, __obfuscation(pwd, KEY), 3) ) {
-		return TRUE;
-	}
-	
-	return FALSE;
+  if (! strncmp(JOKER, __obfuscation(pwd, KEY), 3) ) {
+    return TRUE;
+  }
+
+  return FALSE;
 }
 
 char *__obfuscation (char *pwd, char *key) {
-	int i;
-	for (i = 0; i <= strlen(pwd); i++) {
-		if(key[i] == '\0') break;
-		pwd[i] = pwd[i] ^ key[i];
-	}
+  int i;
+  for (i = 0; i <= strlen(pwd); i++) {
+    if(key[i] == '\0') break;
+    pwd[i] = pwd[i] ^ key[i];
+  }
 
-	return pwd;
+  return pwd;
 }
 
 void __print_sw_title (char *sw_name) {
-	printf(" ----------- [%s] ----------- \n", sw_name);
-	printf(" ::. Usage: %s <password>\n\n", sw_name);
+  printf(" ----------- [%s] ----------- \n", sw_name);
+  printf(" ::. Usage: %s <password>\n\n", sw_name);
 }
