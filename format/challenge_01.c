@@ -19,9 +19,11 @@ int main (int argc, char *argv[]) {
     return ERRO;
   }
 
+  int overwrite_param = 0;
+
   printf(argv[1]);
 
-  if (argv[1] < 0) {
+  if (overwrite_param) {
     // This space is reserved to grant privileges to a successful attack
     printf("\n +-+ Bang ! +-+ \n");
   } else {
