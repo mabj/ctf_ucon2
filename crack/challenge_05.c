@@ -1,5 +1,5 @@
 /*
-* uCon Security Conference II - Recife Pernambuco Brazil - Feb 2009 
+* uCon Security Conference II - Recife / Pernambuco / Brazil - Feb 2009
 *        Challenge 05 - Crack - Difficulty level 01
 *        Password Seed - "_1c0n__"
 *        Author: Marcos Alvares <marcos.alvares gmail>

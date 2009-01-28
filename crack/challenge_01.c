@@ -1,5 +1,5 @@
 /*
-* uCon Security Conference II - Recife Pernambuco Brazil - Feb 2009 
+* uCon Security Conference II - Recife / Pernambuco / Brazil - Feb 2009
 *        Challenge 01 - Crack - Difficulty level 03
 *        Password - "pa55uc0_"
 *        Author: Marcos Alvares <marcos.alvares gmail>
