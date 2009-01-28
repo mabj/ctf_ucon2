@@ -1,7 +1,8 @@
 /*
-* uCon Security Conference II - Recife Pernambuco Brazil - Feb 2009
-*        Challenge 01 - Format - Difficulty level 01
-*        Author: Marcos Alvares <marcos.alvares gmail>
+* uCon Security Conference II - Recife / Pernambuco / Brazil - Feb 2009
+*        Challenge 01 - Format - Difficulty level 02
+*        Author: Marcos Alvares   <marcos.alvares gmail>
+*                Gustavo Pimentel <gusbit gmail>
 */
 
 #include <stdio.h>
@@ -23,11 +24,11 @@ int main (int argc, char *argv[]) {
 
   printf(argv[1]);
 
-  if (overwrite_param) {
-    // This space is reserved to grant privileges to a successful attack
+  if (overwrite_param > 0) {
+//     This space is reserved to grant privileges to a successful attack
     printf("\n +-+ Bang ! +-+ \n");
   } else {
-    printf("\n Shut your fucking face, uncle fucka! \n");
+    printf("\nShut your fucking face, uncle fucka! \n");
   }
 
   return OK;
