@@ -1,5 +1,5 @@
 /*
-* uCon Security Conference II - Recife Pernambuco Brazil - Feb 2009 
+* uCon Security Conference II - Recife / Pernambuco / Brazil - Feb 2009
 *        Challenge 02 - Stack - Difficulty level 02
 *        Author: Marcos Alvares <marcos.alvares gmail>
 */

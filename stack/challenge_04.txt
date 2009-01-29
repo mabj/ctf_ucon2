@@ -1,4 +1,4 @@
-- uCon Security Conference - Feb 2009 - Recife Pernambuco Brazil
+- uCon Security Conference II - Recife / Pernambuco / Brazil - Feb 2009
 
 ::. Challenge 04 .::
   - Category:   Stack
