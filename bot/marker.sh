@@ -46,9 +46,9 @@ function check_input() {
 }
 
 function id_is_registered() {
-	ID=${1}
+	ID="${1}"
 	for I in ${REGISTERED_IDS}; do
-		if [[ ${I} = ${ID} ]]; then
+		if [[ "${I}" == "${ID}" ]]; then
 			return 0 #id found in id file
 		fi
 	done
@@ -56,9 +56,9 @@ function id_is_registered() {
 }
 
 function id_is_tagged() {
-	ID=${1}
+	ID="${1}"
 	for I in ${TAGGED_IDS}; do
-		if [[ ${I} = ${ID} ]]; then
+		if [[ "${I}" == "${ID}" ]]; then
 			return 0 #id found in tag file
 		fi
 	done
