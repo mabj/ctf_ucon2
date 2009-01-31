@@ -2,13 +2,14 @@
 
 files_path = '/ctf_ucon2/'
 
-from sys import argv
-import os
+import sys
+import os 
 import pwd
+import time
 
 '''Print the correct way of using this program'''
 def usage():
-	print 'Usage:', argv[0], '<user_id>'
+	print 'Usage:', sys.argv[0], '<user_id>'
 	print 'Where <user_id> is your id and a valid one.'
 	print
 
@@ -25,7 +26,8 @@ def check_id (id):
 			id_file = open(files_path + 'id_file', 'r')
 		except:
 			print 'The id file doesn\'t exist!'
-			exit(1)
+			print
+			raise SystemExit(1)
 		'Checking if <user_id> is registered in the id_file'
 		for entry in id_file:
 			if entry.strip() == id.strip():
@@ -49,7 +51,8 @@ def check_tag(id):
 		tag_file = open(detect_tag_file(), 'r')
 	except:
 		print 'The tag file (' + detect_tag_file() + ')', 'doesn\'t exist!'
-		exit(1)
+		print
+		raise SystemExit(1)
 	'Seeing if the tag file was already marked'
 	for entry in tag_file:
 		if entry.strip() == id.strip():
@@ -67,9 +70,10 @@ def mark_tag(id):
 	try:
 		tag_file = open(detect_tag_file(), 'a')
 	except:
-		print 'Some strange problem ocurred when writing to the tag file.'
+		print 'Some strange problem ocurred when writing to the tag file (' + detect_tag_file() + ').'
 		print 'Try again.'
-		exit(1)
+		print
+		raise SystemExit(1)
 	'Writing tag in the file'
 	tag_file.write(id+'\n')
 
@@ -77,30 +81,34 @@ def mark_tag(id):
 '''This program marks a valid user id in a tag file if not already marked'''
 if __name__ == '__main__':
 	'Checking number of arguments'
-	if len(argv) != 2:
+	if len(sys.argv) != 2:
 		'Wrong number of arguments passed'
 		usage()
-		exit(1)
+		raise SystemExit(1)
 	else:
+		'Sleeping for 0.5 seconds to prevent file access problems'
+		time.sleep(0.5)
 		'Passing two arguments (program name and one parameter string)'
 		
 		'Checking if the paramenter string is a valid <user_id>'
-		if check_id(argv[1]):
+		if check_id(sys.argv[1]):
 			'<user_id> is ready to be marked'
-			if check_tag(argv[1]):
+			if check_tag(sys.argv[1]):
 				print 'Tag already marked!'
-				print 'The tag for', argv[1], 'is already marked at', detect_tag_file()
+				print 'The tag for', sys.argv[1], 'is already marked at', detect_tag_file()
 				print 'Skipping...'
+				print
 			else:
-				mark_tag(argv[1])
+				mark_tag(sys.argv[1])
 				print 'Marking tag now!'
-				print 'The tag for', argv[1], 'was marked at', detect_tag_file()
+				print 'The tag for', sys.argv[1], 'was marked at', detect_tag_file()
 				print 'Done!'
+				print
 		else:
 			'The id passed is a invalid one'
 			usage()
-			exit(1)
-	exit(0)
+			raise SystemExit(1)
+	raise SystemExit(0)
 
 
 
