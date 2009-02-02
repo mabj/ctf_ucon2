@@ -1,0 +1,26 @@
+- uCon Security Conference II - Recife / Pernambuco / Brazil - Feb 2009
+
+::. Challenge 02 .::
+  - Category:   Format
+  - Level:      03
+  - Author:     Marcos Alvares   <marcos.alvares at gmail>
+
+- Format:
+
+  Binary Format:      ELF, static
+  Source Code:        C ANSI
+  Operating System:   Linux
+  Architecture:       Intel 32 bits
+  Build:              Debug mode, without stack guard GCC optimization
+                      without kernel stack randomization
+
+- Objective:
+
+  Find and exploit the format string bug. This code exposes a printf function
+  vulnerable to format string attacks. Exploit this vulnerability in order to
+  print the bang string on your screen. There are much ways to exploit this
+  software, overwrite the GOT table or the return point. First control the
+  memory dump flow.
+
+####################################################### [Exploit]
+####################################################### [Exploit]
