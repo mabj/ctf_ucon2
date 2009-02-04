@@ -12,16 +12,17 @@ além de serem categorizados, devem ser separados em níveis de dificuldade, de
 forma que quanto maior o nível maior a pontuação caso um participante venha a
 chegar a solução.
 
------------------------------------
-    .:: Project Burn Down ::.
------------------------------------
-          DO        DOING     DONE
-Bot                 [X]
-Crack                         [X]
-Format                        [X]
-Heap                          [!]
-Stack                         [X]
------------------------------------
+-------------------------------------
+      .:: Project Burn Down ::.
+-------------------------------------
+            DO        DOING     DONE
+Bot                   [X]
+Crack                           [X]
+Format                          [X]
+Heap                            [!]
+Stack                           [X]
+Interface             [X]
+-------------------------------------
 
 
 18 Janeiro 2009                        Marcos Alvares <marcos.alvares at gmail>
