@@ -1,5 +1,7 @@
 #!/usr/bin/ruby
+# TODO: Sacar- http://www.ruby-doc.org/core/classes/File/Stat.html
 #
+
 require 'sqlite3'
 require 'logger'
 
