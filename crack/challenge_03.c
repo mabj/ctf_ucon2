@@ -14,6 +14,7 @@
 #define ERRO -1
 
 void __print_sw_title (char *sw_name);
+void __create_tag (char *id);
 
 int main (int argc, char *argv[]) {
   if (argc != 2) {
@@ -24,7 +25,7 @@ int main (int argc, char *argv[]) {
   char *password = (char *) malloc ( sizeof(PASSWORD) * sizeof(char) );
   strncpy (password, argv[1], 12);
   if (! strncmp(PASSWORD, strcat(password, "\x50\x31\x73\x74\x30\x31\x35"), strlen(PASSWORD))) {
-    // This space is reserved to grant privileges to a successful attack
+    __create_tag(argv[0]);
     printf("\n +-+ Bang ! +-+ \n");
   } else {
     printf("\n Shut your fucking face, uncle fucka! \n");
@@ -35,4 +36,14 @@ int main (int argc, char *argv[]) {
 void __print_sw_title (char *sw_name) {
   printf(" ----------- [%s] ----------- \n", sw_name);
   printf(" ::. Usage: %s <password>\n\n", sw_name);
+}
+
+void __create_tag (char *id) {
+  FILE *fd;
+  char *tag_name = (char *)malloc(18 * sizeof(char));
+  memset(tag_name, '\0', 18);
+  snprintf(tag_name,17, "%s_response", id);
+  tag_name += 2;
+  fd = fopen(tag_name, "w");
+  if (fd != NULL) fclose(fd);
 }

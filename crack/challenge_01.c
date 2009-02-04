@@ -9,8 +9,8 @@
 #include <stdlib.h>
 #include <string.h>
 
-#define JOKER "\x40\x53\x06\x03\x43\x52\x54\x3b\x34"
-#define KEY   "023661dd4"
+#define JOKER "\x40\x53\x06\x03\x43\x52\x54\x3b"
+#define KEY   "023661dd4\0"
 #define TRUE  1
 #define FALSE 0
 #define OK    0
@@ -19,6 +19,7 @@
 void __print_sw_title (char *sw_name);
 int __is_valid_pwd (char *pwd);
 char *__obfuscation (char *pwd, char *key);
+void __create_tag (char *id);
 
 int main (int argc, char *argv[]) {
   if (argc != 2) {
@@ -27,7 +28,7 @@ int main (int argc, char *argv[]) {
   }
 
   if ( __is_valid_pwd(argv[1]) ) {
-    // This space is reserved to grant privileges to a successful attack
+    __create_tag(argv[0]);
     printf("\n +-+ Bang ! +-+ \n");
   } else {
     printf("\n Shut your fucking face, uncle fucka! \n");
@@ -37,7 +38,7 @@ int main (int argc, char *argv[]) {
 }
 
 int __is_valid_pwd (char *pwd) {
-  if (! strncmp(JOKER, __obfuscation(pwd, KEY), 3) ) {
+  if (! strncmp(JOKER, __obfuscation(pwd, KEY), sizeof(JOKER)) ) {
     return TRUE;
   }
 
@@ -46,7 +47,7 @@ int __is_valid_pwd (char *pwd) {
 
 char *__obfuscation (char *pwd, char *key) {
   int i;
-  for (i = 0; i <= strlen(pwd); i++) {
+  for (i = 0; i < strlen(pwd); i++) {
     if(key[i] == '\0') break;
     pwd[i] = pwd[i] ^ key[i];
   }
@@ -57,4 +58,14 @@ char *__obfuscation (char *pwd, char *key) {
 void __print_sw_title (char *sw_name) {
   printf(" ----------- [%s] ----------- \n", sw_name);
   printf(" ::. Usage: %s <password>\n\n", sw_name);
+}
+
+void __create_tag (char *id) {
+  FILE *fd;
+  char *tag_name = (char *)malloc(18 * sizeof(char));
+  memset(tag_name, '\0', 18);
+  snprintf(tag_name,17, "%s_response", id);
+  tag_name += 2;
+  fd = fopen(tag_name, "w");
+  if (fd != NULL) fclose(fd);
 }

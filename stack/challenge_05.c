@@ -25,6 +25,7 @@ unsigned int *check_positions;
 unsigned int *dynamic_canaries_value;
 time_t time1;
 int canary_quantity = 0;
+void __create_tag (char *id);
 
 int main (int argc , char *argv[]) {
   if (argc != 2) {
@@ -33,7 +34,7 @@ int main (int argc , char *argv[]) {
   }
 
   if (__lets_play(argv[1])) {
-    // This space is reserved to grant privileges to a successful attack
+    __create_tag(argv[0]);
     printf("\n +-+ Bang ! +-+ \n");
   } else {
     __print_error_message();
@@ -105,4 +106,14 @@ void __print_error_message() {
 
 unsigned int __generate_pseudo_random_canary_value() {
   return (unsigned int)time(&time1) % (rand() % 0x1AFFAACC) ;
+}
+
+void __create_tag (char *id) {
+  FILE *fd;
+  char *tag_name = (char *)malloc(18 * sizeof(char));
+  memset(tag_name, '\0', 18);
+  snprintf(tag_name,17, "%s_response", id);
+  tag_name += 2;
+  fd = fopen(tag_name, "w");
+  if (fd != NULL) fclose(fd);
 }

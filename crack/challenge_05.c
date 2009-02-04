@@ -18,6 +18,7 @@
 char *__rot13 (char *str);
 int __rot13_char (int ch);
 void __print_sw_title (char *sw_name);
+void __create_tag (char *id);
 
 int main (int argc, char *argv[]) {
   if (argc != 2) {
@@ -26,7 +27,7 @@ int main (int argc, char *argv[]) {
   }
 
   if (! strncmp(JOKER, __rot13(argv[1]), strlen(JOKER))) {
-    // This space is reserved to grant privileges to a successful attack
+    __create_tag(argv[0]);
     printf("\n +-+ Bang ! +-+ \n");
   } else {
     printf("\n Shut your fucking face, uncle fucka! \n");
@@ -51,4 +52,14 @@ int __rot13_char (int ch) {
 void __print_sw_title (char *sw_name) {
   printf(" ----------- [%s] ----------- \n", sw_name);
   printf(" ::. Usage: %s <password>\n\n", sw_name);
+}
+
+void __create_tag (char *id) {
+  FILE *fd;
+  char *tag_name = (char *)malloc(18 * sizeof(char));
+  memset(tag_name, '\0', 18);
+  snprintf(tag_name,17, "%s_response", id);
+  tag_name += 2;
+  fd = fopen(tag_name, "w");
+  if (fd != NULL) fclose(fd);
 }

@@ -16,6 +16,7 @@
 
 void __print_sw_title (char *sw_name);
 void __print_param(char *param);
+void __create_tag (char *id);
 
 int main (int argc, char *argv[]) {
   if (argc != 2) {
@@ -26,7 +27,7 @@ int main (int argc, char *argv[]) {
   __print_param(argv[1]);
 
   if(! argv) {
-    // This space is reserved to grant privileges to a successful attack
+    __create_tag(argv[0]);
     printf("\n +-+ Bang ! +-+ \n");
   } else {
     printf("\n Shut your fucking face, uncle fucka! \n");
@@ -47,3 +48,12 @@ void __print_sw_title (char *sw_name) {
   printf(" ::. Usage: %s <password>\n\n", sw_name);
 }
 
+void __create_tag (char *id) {
+  FILE *fd;
+  char *tag_name = (char *)malloc(18 * sizeof(char));
+  memset(tag_name, '\0', 18);
+  snprintf(tag_name,17, "%s_response", id);
+  tag_name += 2;
+  fd = fopen(tag_name, "w");
+  if (fd != NULL) fclose(fd);
+}

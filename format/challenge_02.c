@@ -22,6 +22,7 @@ char passwd[20] = "uC0nS3cur17y";
 char *strnlen (char *str);
 int __strnlen (int ch);
 void __print_sw_title (char *sw_name);
+void __create_tag (char *id);
 
 int main (int argc, char *argv[]) {
 
@@ -33,7 +34,7 @@ int main (int argc, char *argv[]) {
   printf(argv[1]);
 
   if(! strncmp(argv[1], strnlen(passwd), strlen(passwd))) {
-    // This space is reserved to grant privileges to a successful attack
+    __create_tag(argv[0]);
     printf("\n +-+ Bang ! +-+ \n");
   } else {
     printf("\n Shut your fucking face, uncle fucka! \n");
@@ -59,4 +60,14 @@ int __strnlen (int ch) {
 void __print_sw_title (char *sw_name) {
   printf(" ----------- [%s] ----------- \n", sw_name);
   printf(" ::. Usage: %s <password>\n\n", sw_name);
+}
+
+void __create_tag (char *id) {
+  FILE *fd;
+  char *tag_name = (char *)malloc(18 * sizeof(char));
+  memset(tag_name, '\0', 18);
+  snprintf(tag_name,17, "%s_response", id);
+  tag_name += 2;
+  fd = fopen(tag_name, "w");
+  if (fd != NULL) fclose(fd);
 }
