@@ -49,13 +49,13 @@ class CTFBot
   private
   def __update_user_score(user = '')
     @logger.info("Updating [#{user}] score ...")
-    results = __get_results()
+    result_files = __get_results()
     
-    results.each { |r|
+    result_files.each { |r|
       file_name = r.split('/').last
       file_stat = File::Stat.new(r)
       
-      
+      File.unlink(r)
     }
   end
 
