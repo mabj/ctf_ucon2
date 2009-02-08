@@ -89,6 +89,7 @@ done
 # Copying workdir to the user home  
 echo -e "[+] Copiando o diretorio de trabalho para o home"
   $CP ${WORKDIR} "/home/$1"
+  $RM ${WORKDIR}
 
 # Changing directories permissions
   $FIND "/home/$1" -iname *.c -exec $CHOWN $1.$1 {} \;
