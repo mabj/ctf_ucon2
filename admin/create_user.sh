@@ -9,21 +9,29 @@ WORKDIR="./ucon2"
 CP="/bin/cp -af"
 CHOWN="/bin/chown"
 CHMOD="/bin/chmod"
+CHATTR="/usr/bin/chattr +i"
 OPENSSL="/usr/bin/openssl"
-PASSWORD="$OPENSSL rand -base64 8"
+PASSWORD="${OPENSSL} rand -base64 8"
 USERADD="/usr/sbin/useradd"
 GROUPADD="/usr/sbin/groupadd"
 USERMOD="/usr/sbin/usermod"
 ECHO="/bin/echo -e"
 SENDMAIL="./sendEmail-v1.55/sendEmail \
-			-f \"CTF - uCon Security Conference <ctf@ucon-conference.org>\" \
-			-u \"uCon CTF - 2009 edition\""
+         -f \"CTF - uCon Security Conference <ctf@ucon-conference.org>\" \
+         -u \"uCon CTF - 2009 edition\""
 
 # Verify parameters
 if [ $# != 2 ]; then
-	${ECHO} ".:: uCon 2 Capture The Flag ::.\n"
-	${ECHO} "   Usage: ${0} [user_name] [user_mail]\n"
-	exit 1
+  ${ECHO} ".:: uCon 2 Capture The Flag ::.\n"
+  ${ECHO} "   Usage: ${0} [user_name] [user_mail]\n"
+  exit 1
+fi
+
+# Check user permissions
+WHOAMI=`/usr/bin/whoami`
+if [ eq "${WHOAMI}" != "root" ]; then
+  ${ECHO} "[+] This script needs to be run as root!"
+  exit 1
 fi
 
 if [ -e "/home/$1" ]; then
@@ -66,6 +74,7 @@ for i in $(/bin/ls ./code/crackme/*.c) ; do
   ${GCC} "${WORKDIR}/crackme/${PROGRAM}/${PROGRAM}" ${i}
   ${CHOWN} ${PROGRAM}.${PROGRAM} "${WORKDIR}/crackme/${PROGRAM}/${PROGRAM}"
   ${CHMOD} 4555 "${WORKDIR}/crackme/${PROGRAM}/${PROGRAM}"
+  ${CHATTR} "${WORKDIR}/crackme/${PROGRAM}/${PROGRAM}"
 done
 
 ${ECHO} "[+] Building vulndev challenges ..."
@@ -80,9 +89,10 @@ for i in $(/bin/ls ./code/vulndev/*.c) ; do
   ${CP} ${i} "${WORKDIR}/vulndev/$PROGRAM/"
   ${CHOWN} ${PROGRAM}.${PROGRAM} "${WORKDIR}/vulndev/${PROGRAM}/${PROGRAM}"
   ${CHMOD} 4555 "${WORKDIR}/vulndev/${PROGRAM}/${PROGRAM}"
+  ${CHATTR} "${WORKDIR}/vulndev/${PROGRAM}/${PROGRAM}"
 done
 
-$ECHO "[+] Building holygrail challenges ..."
+${ECHO} "[+] Building holygrail challenges ..."
 for i in $(/bin/ls ./code/holygrail/*.c) ; do
   PROGRAM=`/bin/echo $i | /usr/bin/awk -F "/" '{print $4}' | /usr/bin/awk -F "." '{print $1}'`
   ${INSTALL} "${WORKDIR}/holygrail/${PROGRAM}"
@@ -94,7 +104,7 @@ for i in $(/bin/ls ./code/holygrail/*.c) ; do
   ${CP} ${i} "${WORKDIR}/holygrail/${PROGRAM}/"
   ${CHOWN} ${PROGRAM}.${PROGRAM} "${WORKDIR}/holygrail/${PROGRAM}/${PROGRAM}"
   ${CHMOD} 4555 "${WORKDIR}/holygrail/${PROGRAM}/${PROGRAM}"
-  # TODO: sacar o esquema de apenas o root poder apagar o arquivo
+  ${CHATTR} "${WORKDIR}/holygrail/${PROGRAM}/${PROGRAM}"
 done
 
 # Copying workdir to the user home  

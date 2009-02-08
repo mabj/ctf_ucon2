@@ -1,0 +1,77 @@
+# TODO: Fazer a versão em inglês desse documento
+
+
+[ --- Introdução
+
+Seguindo a linha das mais consagradas conferencias de segurança internacionais,
+a uCon Security Conference 2009 apresenta pela primeira vez seu desafio Capture
+The Flag - CTF. O desafio segue uma linha bem tradicional focando na exploração
+de vulnerabilidades em softwares e engenharia reversa.
+
+Basicamente, o principal objetivo dos desafios é o carater educacional. Além
+disso, os challenges foram desenhados de maneira a confrontar os jogadores com
+diversos problemas onde a experiência gradualmente adquirida em um determinado
+desafio ajudará o participante ao longo do jogo, tornando mais clara e fácil a
+resolução dos problemas subsequentes.
+
+
+[ --- Sobre o jogo
+
+O desafio CTF será realizado em 28/02/2009 (dia do evento: uCon 2009) ao longo
+de todo o dia. Os interessados podem inscrever-se previamente conforme indicado
+no site da uCon ou no dia da conferência contactando diretamente a equipe
+responsável pelo desafio. Vale salientar que a inscrição é gratuita e pode ser
+realizada a qualquer momento até mesmo após o início do jogo. Lembramos que só
+serão aceitas inscrições prévias de usuários já registrados na conferência e
+que pagaram o respectivo valor da inscrição.
+
+No dia da conferência será disponibilizado um servidor para que os participantes
+possam conectar-se e explorar os desafios. Cada usuário possuirá um account na
+máquina do CTF: para aqueles que se registraram no site essa conta já estará
+previamente criada, os outros participantes devem procurar a equipe responsável
+pelo CTF para efetuar seu cadastro. Durante o evento a equipe do CTF estará
+circulando pelo evento tirando dúvidas e fazendo o cadastro de novos jogadores.
+Será também disponibilizada uma interface onde os congressistas poderão
+acompanhar a pontuação de cada participante no decorrer do desafio.
+
+O desafio encerra ao final do ciclo de palestras previstas para o evento. O
+resultado final será anunciado durante o encerramento da uCon Security
+Conference 2009. O vencedor do desafio CTF receberá um prêmio simbólico que
+consiste no consagrado livro Shellcoder's Handbook Second Edition [1], uma
+camisa exclusiva da conferência, entrada garantida para o evento do ano que
+vem e [ direito ao passeio para porto de galinhas ou speakers party ].
+
+Após o termino da uCon 2009, os desafios serão disponibilizados no site da
+conferência para que qualquer pessoa possa baixa-los, estudar o código-fonte e
+analisar as soluções propostas pela equipe.
+
+Maiores detalhes serão divulgados durante a abertura da conferência. Qualquer
+dúvida pode ser esclarecida durante o eventou ou através do seguinte endereço
+de e-mail: ctf@ucon-conference.org
+
+
+[ --- Processo de inscrição
+
+Se você está interessado em participar do desafio CTF da uCon Security
+Conference 2009 e já tiver realizado sua inscrição junto a organização do
+evento envie um e-mail para ctf@ucon-conference.org com as seguintes
+informações:
+
+    Subject: CTF uCon 2009
+    Body...: Nome Completo do Participante
+
+
+[ --- Referências
+
+    [1]: The Shellcoder's Handbook Second Edition
+   http://www.amazon.com/Shellcoders-Handbook-Discovering-Exploiting-Security/\
+   dp/047008023X/ref=sr_1_1?ie=UTF8&s=books&qid=1234126133&sr=1-1
+
+    [2]: uCon Security Conferece 2009 - CTF informations
+   ctf@ucon-conference.org
+   http://www.ucon-conference.org/ctf.html
+	
+
+
+08 Fevereiro 2009                                                   - CTF Team
+-------------------------------------------------------------------------------

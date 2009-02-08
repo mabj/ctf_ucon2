@@ -1,0 +1,22 @@
+- uCon Security Conference II - Recife / Pernambuco / Brazil - Feb 2009
+
+::. Challenge 06 .::
+  - Category:   Stack
+  - Level:      03
+  - Author:     Gustavo Pimentel <gusbit at gmail>
+
+- Format:
+
+  Binary Format:      ELF, static
+  Source Code:        C ANSI
+  Operating System:   Linux
+  Architecture:       Intel 32 bits
+  Build:              Debug mode, stack guard GCC optimization disabled,
+                      stack-based addresses randomization disabled
+
+- Objective:
+
+  Find and exploit the stack based buffer overflow bug. In this challenge
+  you can not control the %eip directly, instead, you need to override
+  the %ebp in order to take control of the process' execution flow and
+  manage to exploit the challenge.
