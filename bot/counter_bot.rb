@@ -22,6 +22,7 @@ class CTFBot
     while true
       @logger.debug('main loop iteration')
       users = __list_users()
+      __user_base_garbage_collect(users)
       users.each { |user|
         __update_user_score(user)
       }
@@ -30,6 +31,13 @@ class CTFBot
   end
 
   private
+  def __user_base_garbage_collect(system_users_home = [])
+    users = system_users_home.collect {|u| u.split('/').last }
+    if users.size.zero?
+      return
+    end
+    @dbh.execute('delete from users where' + Array.new(users.size, 'name <> ?').join(' AND '), *users )
+  end
   def __create_user_if_not_exists (user_name = '')
     rows = @dbh.execute('select name, mail from users where name = ?', user_name)
     if rows.size.zero?
