@@ -14,6 +14,9 @@ all: clean
 	@echo "[+] Building challenge 05 ..."
 		gcc -fno-stack-protector -ggdb -o ch_05 challenge_05.c
 	@echo " "
+	@echo "[+] Building challenge 06 ..."
+		gcc -fno-stack-protector -ggdb -o ch_06 challenge_06.c
+	@echo " "
 clean:
 	@echo "[+] Cleaning ..."
 	rm -rf *~ *.o ch_*

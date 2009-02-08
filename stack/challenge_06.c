@@ -1,0 +1,78 @@
+/*
+* uCon Security Conference II - Recife / Pernambuco / Brazil - Feb 2009
+*        Challenge 06 - Stack - Difficulty level 03
+*        Author: Gustavo Pimentel <gusbit gmail>
+*/
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+#define OK 	0
+#define ERROR	-1
+
+void __print_sw_title (char *sw_name);
+
+char *__copy_str (char *dst, char *src) {
+  if (strlen(src) > 256) {
+    exit(ERROR);
+  }
+
+  char *p = dst;
+
+  while (*src != '\0') {
+    *p++ = *src++;
+  }
+
+  *p = '\0';
+  return dst;
+}
+
+void __copy_arg2buf (char *argv) {
+  char buffer[256];
+
+  memset(buffer, '\0', sizeof(buffer));
+  __copy_str(buffer, argv);
+}
+
+int __process_args (char *argv) {
+  int canary = 0xdeadbeef;
+
+  __copy_arg2buf(argv);
+
+  if (canary != 0xdeadbeef) {
+    exit(ERROR);
+  }
+
+  return OK;
+}
+
+void __print_str (int argc, char *argv) {
+  char *strwinner = "\n +-+ Bang ! +-+ \n";
+  char *strlooser = "\nShut your fucking face, uncle fucka! \n";
+
+  if (argv) {
+    __process_args(argv);
+    printf(strlooser);
+  } else {
+    // grant priviledge
+    printf(strwinner);
+  }
+}
+
+int main (int argc, char *argv[]) {
+  if (argc != 2) {
+    __print_sw_title(argv[0]);
+    return ERROR;
+  }
+  else {
+    __print_str(argc, argv[1]);
+  } 
+
+  return OK;
+}
+
+void __print_sw_title (char *sw_name) {
+  printf(" ----------- [%s] ----------- \n", sw_name);
+  printf(" ::. Usage: %s <arg>\n\n", sw_name);
+}
