@@ -20,7 +20,7 @@ class CTFBot
 
   def run
     while true
-      @logger.info('main loop iteration')
+      @logger.debug('main loop iteration')
       users = __list_users()
       users.each { |user|
         __update_user_score(user)
@@ -50,7 +50,7 @@ class CTFBot
     user = user_home.split('/').last
     __create_user_if_not_exists(user)
 
-    @logger.info("Updating [#{user}] score ...")
+    @logger.debug("Updating [#{user}] score ...")
     result_files = __get_results(user)
 
     result_files.each { |r|
@@ -66,9 +66,9 @@ class CTFBot
   end
 
   def __get_results (user)
-    crackme = Dir.glob(@home_dir + user + '/ucon2/crackme/*_response')
-    vulndev = Dir.glob(@home_dir + user  + '/ucon2/vulndev/*_response')
-    special = Dir.glob(@home_dir + user + '/ucon2/holygrail/*_response')
+    crackme = Dir.glob(@home_dir + user + '/ucon2/crackme/*/score/*_response')
+    vulndev = Dir.glob(@home_dir + user  + '/ucon2/vulndev/*/score/*_response')
+    special = Dir.glob(@home_dir + user + '/ucon2/holygrail/*/score/*_response')
 
     crackme + vulndev + special
   end
@@ -81,7 +81,7 @@ end
 
 
 logger = Logger.new(LOG_FILE)
-logger.level = Logger::DEBUG
+logger.level = Logger::INFO
 logger.info('Starting the capture the flag bot ... ')
 
 logger.info('Connecting with database ... ')

@@ -54,8 +54,10 @@ echo -e "[+] Building crackme challenges ..."
 for i in $(/bin/ls ./code/crackme/*.c) ; do
   PROGRAM=`echo $i | awk -F "/" '{print $4}' | awk -F "." '{print $1}'`
   $INSTALL "${WORKDIR}/crackme/${PROGRAM}"
+  $INSTALL "${WORKDIR}/crackme/${PROGRAM}/score"
 	$CHOWN $1.$1 "${WORKDIR}/crackme"
   $CHOWN -R $1.$1 "${WORKDIR}/crackme/${PROGRAM}"
+  $CHOWN ${PROGRAM}.${PROGRAM} "${WORKDIR}/crackme/${PROGRAM}/score"
   $GCC "${WORKDIR}/crackme/${PROGRAM}/${PROGRAM}" $i
   $CHOWN ${PROGRAM}.${PROGRAM} "${WORKDIR}/crackme/${PROGRAM}/${PROGRAM}"
   $CHMOD 4555 "${WORKDIR}/crackme/${PROGRAM}/${PROGRAM}"
@@ -65,8 +67,10 @@ echo -e "[+] Building vulndev challenges ..."
 for i in $(/bin/ls ./code/vulndev/*.c) ; do
   PROGRAM=`echo $i | awk -F "/" '{print $4}' | awk -F "." '{print $1}'`
   $INSTALL "${WORKDIR}/vulndev/${PROGRAM}"
+  $INSTALL "${WORKDIR}/vulndev/${PROGRAM}/score"
   $CHOWN $1.$1 "${WORKDIR}/vulndev"
   $CHOWN -R $1.$1 "${WORKDIR}/vulndev/${PROGRAM}"
+  $CHOWN ${PROGRAM}.${PROGRAM} "${WORKDIR}/vulndev/${PROGRAM}/score"
   $GCC "${WORKDIR}/vulndev/${PROGRAM}/${PROGRAM}" $i
   $CP $i "${WORKDIR}/vulndev/$PROGRAM/"
   $CHOWN ${PROGRAM}.${PROGRAM} "${WORKDIR}/vulndev/${PROGRAM}/${PROGRAM}"
@@ -77,8 +81,10 @@ echo -e "[+] Building holygrail challenges ..."
 for i in $(/bin/ls ./code/holygrail/*.c) ; do
   PROGRAM=`echo $i | awk -F "/" '{print $4}' | awk -F "." '{print $1}'`
   $INSTALL "${WORKDIR}/holygrail/${PROGRAM}"
+  $INSTALL "${WORKDIR}/holygrail/${PROGRAM}/score"
   $CHOWN $1.$1 "${WORKDIR}/holygrail"
   $CHOWN $1.$1 "${WORKDIR}/holygrail/${PROGRAM}"
+  $CHOWN ${PROGRAM}.${PROGRAM} "${WORKDIR}/holygrail/${PROGRAM}/score"
   $GCC "${WORKDIR}/holygrail/$PROGRAM/${PROGRAM}" $i
   $CP $i "${WORKDIR}/holygrail/${PROGRAM}/"
   $CHOWN ${PROGRAM}.${PROGRAM} "${WORKDIR}/holygrail/${PROGRAM}/${PROGRAM}"
