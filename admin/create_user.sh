@@ -29,7 +29,7 @@ fi
 
 # Add challenge users
 for i in 01 02 03 04 05 06 07 08 09 10 11; do
-	$USERADD challenge_$i 2> /dev/null
+	$USERADD -u 10$i challenge_$i 2> /dev/null
 	$USERMOD -d "" challenge_$i
 	$USERMOD -s "/bin/false" challenge_$i 
 done
