@@ -76,8 +76,6 @@ class CTFBot
   def __get_results (user)
     crackme = Dir.glob(@home_dir + user + '/ucon2/crackme/*/*.tag')
     vulndev = Dir.glob(@home_dir + user  + '/ucon2/vulndev/*/*.tag')
-    special = Dir.glob(@home_dir + user + '/ucon2/holygrail/*/*.tag')
-
     crackme + vulndev + special
   end
 
