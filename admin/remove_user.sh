@@ -1,18 +1,35 @@
 #!/bin/bash
 
+RM="/bin/rm -rf"
+ECHO="/bin/echo -e"
 USERDEL="/usr/sbin/userdel"
-RM="rm -rf "
+CHATTR="/usr/bin/chattr"
 
 if [ $# != 1 ]; then
 	echo -e ".:: uCon 2 Capture The Flag ::.\n"
-	echo -e "   Usage: $0 [user_name]\n"
+	echo -e "   Usage: ${0} [user_name]\n"
 	exit 1
 fi
 
-echo -e "[+] Apacando home do usuario"
-$RM "/home/$1"
-echo -e "[+] Apagando usuario do sistema ..."
-$USERDEL $1
+WHOAMI=`/usr/bin/whoami`
+if [ "${WHOAMI}" != "root" ]; then
+  ${ECHO} "[+] This script needs to be run as root!"
+  exit 1
+fi
 
+${ECHO} "[+] Removing file attributes..."
 
+for i in $(seq 1 5); do
+  ${CHATTR} -i "/home/${1}/ucon2/crackme/challenge_0${i}"
+  ${CHATTR} -a "/home/${1}/ucon2/crackme/challenge_0${i}.tag"
+done
 
+for i in $(seq -w 6 11); do
+  ${CHATTR} -i 	"/home/${1}/ucon2/vulndev/challenge_${i}"
+  ${CHATTR} -a 	"/home/${1}/ucon2/vulndev/challenge_${i}.tag"
+done
+
+${ECHO} "[+] Removing users' home directory..."
+${RM} "/home/${1}"
+${ECHO} "[+] Removing user registry..."
+${USERDEL} ${1}

@@ -7,6 +7,7 @@ FIND="/usr/bin/find"
 RM="/bin/rm -rf"
 WORKDIR="./ucon2"
 CP="/bin/cp -af"
+CAT="/bin/cat"
 CHOWN="/bin/chown"
 CHMOD="/bin/chmod"
 CHATTR="/usr/bin/chattr"
@@ -30,13 +31,13 @@ fi
 
 # Check user permissions
 WHOAMI=`/usr/bin/whoami`
-if [ eq "${WHOAMI}" != "root" ]; then
+if [ "${WHOAMI}" != "root" ]; then
   ${ECHO} "[+] This script needs to be run as root!"
   exit 1
 fi
 
-if [ -e "/home/$1" ]; then
-	${ECHO} "\n[!] O usuario [${1}] ja foi adicionado\n"
+if [ -e "/home/${1}" ]; then
+	${ECHO} "\n[!] User [${1}] already exists!\n"
 	exit 1
 fi
 
@@ -59,7 +60,7 @@ RANDPASS=`${PASSWORD}`
 ${USERADD} ${1} -d /home/${1} -m -g ${1} -p $(${OPENSSL} passwd -1 ${RANDPASS})
 ${CHMOD} -R 0700 /home/${1}
 
-${ECHO} "[+] Garantindo previlegios ao diretorio de trabalho"
+${ECHO} "[+] Changing workdir privileges..."
 ${INSTALL} ${WORKDIR}
 ${CHOWN} ${1}.${1} ${WORKDIR}
 
@@ -128,16 +129,14 @@ for i in $(/bin/ls ./code/holygrail/*.c) ; do
   ${CHATTR} +a "${WORKDIR}/holygrail/${PROGRAM}/${PROGRAM}.tag"
 done
 
-# Copying workdir to the user home  
-${ECHO} "[+] Copiando o diretorio de trabalho para o home"
+# Copying workdir to the user home
+${ECHO} "[+] Copying workdir to the users' home..."
 ${CP} ${WORKDIR} "/home/${1}"
 
 # Changing directories permissions
 ${FIND} "/home/${1}" -iname *.c -exec ${CHOWN} ${1}.${1} {} \;
 
 # Sending mail ...
-${ECHO} "[+] Enviando email com credenciais ... "
-
 IPADDR=`/sbin/ifconfig eth0 | /bin/grep "inet addr" | /usr/bin/awk -F " " '{print $2}' | /usr/bin/awk -F ":" '{print $2}'`
 
 MAILDIR="./users/${1}/mail/"
@@ -153,4 +152,10 @@ ${ECHO} "You should ssh the CTF machine in order to change the default password.
 ${ECHO} "Following up are user's credentials:\n\n" >> ${MAILDIR}${MESSAGE}
 ${ECHO} "IP address: ${IPADDR}\nLogin: ${1}\nPassword: ${RANDPASS}\n" >> ${MAILDIR}${MESSAGE}
 
-${SENDMAIL} -t "${1} ${2}" -o message-file=${MAILDIR}${MESSAGE} -l ${MAILDIR}${LOGFILE}
+if [ -e ./sendEmail-v1.55/sendEmail ]; then
+  ${ECHO} "[+] Sending an email message with user credentials..."
+  ${SENDMAIL} -t "${1} ${2}" -o message-file=${MAILDIR}${MESSAGE} -l ${MAILDIR}${LOGFILE}
+else
+  ${ECHO} "[+] Impossible to send user credentials through mail client..."
+  ${CAT} ${MAILDIR}${MESSAGE}
+fi

@@ -9,7 +9,7 @@ ARP="/usr/sbin/arp -s"
 
 # Check user permissions
 WHOAMI=`/usr/bin/whoami`
-if [ eq "${WHOAMI}" != "root" ]; then
+if [ "${WHOAMI}" != "root" ]; then
   ${ECHO} "[+] This script needs to be run as root!"
   exit 1
 fi
