@@ -135,5 +135,4 @@ if [ -e ./sendEmail-v1.55/sendEmail ]; then
   ${SENDMAIL} -t "${1} ${2}" -o message-file=${MAILDIR}${MESSAGE} -l ${MAILDIR}${LOGFILE}
 else
   ${ECHO} "[+] Impossible to send user credentials through mail client..."
-  ${CAT} ${MAILDIR}${MESSAGE}
 fi
