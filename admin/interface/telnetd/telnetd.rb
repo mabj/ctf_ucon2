@@ -16,7 +16,7 @@ SLEEP_TIME  = 5
 SQLITE_DATABASE_FILE = '../../database/ucon2.db'
 PORT = 23
 
-server = TCPServer.new('localhost', PORT)
+server = TCPServer.new(PORT)
 
 template = sprintf("%s\n", File.new('score.erb').readlines.join)
 @erb = ERB.new(template, 0, "%<>")
