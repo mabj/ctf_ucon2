@@ -4,6 +4,8 @@ MV="/bin/mv"
 CAT="/bin/cat"
 SED="/bin/sed"
 ECHO="/bin/echo -e"
+USERADD="/usr/sbin/useradd"
+USERMOD="/usr/sbin/usermod"
 IPTABLES="/sbin/iptables"
 PING="/bin/ping -c1"
 ARP="/usr/sbin/arp -s"
@@ -11,9 +13,17 @@ ARP="/usr/sbin/arp -s"
 # Check user permissions
 WHOAMI=`/usr/bin/whoami`
 if [ "${WHOAMI}" != "root" ]; then
-  ${ECHO} "[!] This script needs to be run as root!"
+  ${ECHO} "\n[!] This script needs to be run as root!\n"
   exit 1
 fi
+
+# Add challenge users
+${ECHO} "[+] Adding challenge users..."
+for i in $(/usr/bin/seq -w 1 11); do
+	${USERADD} -u 10${i} challenge_${i} 2> /dev/null
+	${USERMOD} -d "" challenge_${i}
+	${USERMOD} -s "/bin/false" challenge_${i} 
+done
 
 # Changing umask value (-rw-------)
 ${ECHO} "[+] Setting the appropriate umask..."
@@ -28,7 +38,7 @@ ${ECHO} "[+] Disabling stack-based addresses randomization..."
 ${ECHO} 0 > /proc/sys/kernel/randomize_va_space
 
 # Prevent syslog from dumping messages to stdout
-${ECHO} "[+] Defining syslog verbosity"
+${ECHO} "[+] Defining syslog verbosity..."
 ${ECHO} "4 1 1 7" > /proc/sys/kernel/printk
 
 # Network informations
@@ -39,13 +49,8 @@ MACADDR="00:0C:29:76:BC:AC"
 # Preventing ARP spoof
 ${ECHO} "[+] Setting up static MAC address..."
 GWADDR=`/sbin/route -n | /usr/bin/tail -1 | /usr/bin/awk '{print $2}'`
-ARPCACHE=`/usr/sbin/arp -a ${GWADDR}`
-
-if [ "${ARPCACHE}" == "192.168.1.1 (192.168.1.1) -- no entry" ]; then
-  ${PING} ${GWADDR} 2>&1>&/dev/null
-fi
-
-GWMAC=`/usr/sbin/arp -a 192.168.1.1 | /usr/bin/awk '{print $4}'`
+${PING} ${GWADDR} 2>&1>&/dev/null
+GWMAC=`/usr/sbin/arp -a ${GWADDR} | /usr/bin/awk '{print $4}'`
 ${ARP} ${GWADDR} ${GWMAC}
 
 # Setting local firewall configuration parameters
@@ -120,6 +125,7 @@ ${IPTABLES} -A OUTPUT -s 127.0.0.1/32 -d 127.0.0.1/32 -j ACCEPT
 # Firewall rules
 ${ECHO} "[+] Setting firewall rules..."
 ${IPTABLES} -A OUTPUT -s ${IPADDR}/32 -d ${UCONADDR}/32 -m owner --uid-owner root -p tcp --dport 25 -j ACCEPTLOG
+${IPTABLES} -A OUTPUT -s ${IPADDR}/32 -d 0.0.0.0/0 -p udp --dport 53 -j ACCEPTLOG
 ${IPTABLES} -A OUTPUT -s ${IPADDR}/32 -d 0.0.0.0/0 -p icmp --icmp-type echo-request -j ACCEPTLOG
 ${IPTABLES} -A INPUT -s 0.0.0.0/0 -d ${IPADDR}/32 -p icmp --icmp-type echo-request -j ACCEPTLOG
 ${IPTABLES} -A INPUT -s 0.0.0.0/0 -d ${IPADDR}/32 -m multiport -p tcp --dports 22,23,80 -j ACCEPTLOG
@@ -127,6 +133,7 @@ ${IPTABLES} -A INPUT -s 0.0.0.0/0 -m addrtype --dst-type BROADCAST -m multiport 
 
 # so sai porta 25 se o usuario for o root
 # habilita icmp echo request da maquina do CTF para todas outras maquinas da rede
+# permitir que a maquina do CTF resolva entradas DNS
 # habilita icmp echo request para todas as maquinas da rede para a maquina do CTF
 # permite conexoes nas portas 22,23,80 da maquina do CTF
 # bloqueia mensagens NetBIOS para que nao fiquem registradas em log

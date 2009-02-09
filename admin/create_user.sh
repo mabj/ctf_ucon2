@@ -16,11 +16,8 @@ OPENSSL="/usr/bin/openssl"
 PASSWORD="${OPENSSL} rand -base64 8"
 USERADD="/usr/sbin/useradd"
 GROUPADD="/usr/sbin/groupadd"
-USERMOD="/usr/sbin/usermod"
 ECHO="/bin/echo -e"
-SENDMAIL="./sendEmail-v1.55/sendEmail \
-         -f \"CTF - uCon Security Conference <ctf@ucon-conference.org>\" \
-         -u \"uCon CTF - 2009 edition\""
+SENDMAIL="./sendEmail-v1.55/sendEmail"
 
 # Verify parameters
 if [ $# != 2 ]; then
@@ -32,24 +29,16 @@ fi
 # Check user permissions
 WHOAMI=`/usr/bin/whoami`
 if [ "${WHOAMI}" != "root" ]; then
-  ${ECHO} "[+] This script needs to be run as root!"
+  ${ECHO} "\n[!] This script needs to be run as root!\n"
   exit 1
 fi
 
+# Adding user ...
 if [ -e "/home/${1}" ]; then
-	${ECHO} "\n[!] User [${1}] already exists!\n"
-	exit 1
+  ${ECHO} "\n[!] User [${1}] already exists!\n"
+  exit 1
 fi
 
-# Add challenge users
-for i in $(seq -w 1 11); do
-	${USERADD} -u 10${i} challenge_${i} 2> /dev/null
-	${USERMOD} -d "" challenge_${i}
-	${USERMOD} -s "/bin/false" challenge_${i} 
-done
-
-
-# Adding user ...
 ${ECHO} "[+] Adding group ..."
 ${GROUPADD} ${1}
 
@@ -134,14 +123,18 @@ fi
 LOGFILE="mail.log"
 MESSAGE="message.txt"
 
-${ECHO} "Congratulations ${1}, you have been subscribed to the uCon Capture The Flag 2009 edition.\n\n" > ${MAILDIR}${MESSAGE}
-${ECHO} "You should ssh the CTF machine in order to change the default password.\n" >> ${MAILDIR}${MESSAGE}
-${ECHO} "Following up are user's credentials:\n\n" >> ${MAILDIR}${MESSAGE}
-${ECHO} "IP address: ${IPADDR}\nLogin: ${1}\nPassword: ${RANDPASS}\n" >> ${MAILDIR}${MESSAGE}
+SENDER="CTF @ uCon 2009 <ctf@ucon-conference.org>"
+SUBJECT="Registration: uCon CTF - 2009 edition"
+
+${ECHO} -n "Congratulations ${1}, you have been subscribed to the uCon Capture The Flag 2009 edition. " > ${MAILDIR}${MESSAGE}
+${ECHO} -n "You should SSH the CTF machine in order to change the default password.\n\n" >> ${MAILDIR}${MESSAGE}
+${ECHO} -n "Following up are user's credentials:\n\n" >> ${MAILDIR}${MESSAGE}
+${ECHO} -n "Login: ${1}\nPassword: ${RANDPASS}\nCTF machine: ${IPADDR} [ctf.ucon-conference.org]\n\n" >> ${MAILDIR}${MESSAGE}
+${ECHO} -n "Good Luck!!!\n\n--\nCTF Team @ uCon Security Conference 2009" >> ${MAILDIR}${MESSAGE}
 
 if [ -e ./sendEmail-v1.55/sendEmail ]; then
   ${ECHO} "[+] Sending an email message with user credentials..."
-  ${SENDMAIL} -t "${1} ${2}" -o message-file=${MAILDIR}${MESSAGE} -l ${MAILDIR}${LOGFILE}
+  ${SENDMAIL} -f "${SENDER}" -u "${SUBJECT}" -t "${1} ${2}" -o message-file=${MAILDIR}${MESSAGE} -l ${MAILDIR}${LOGFILE} 2>&1>&/dev/null
 else
-  ${ECHO} "[+] Impossible to send user credentials through mail client..."
+  ${ECHO} "[!] Impossible to send user credentials through mail client..."
 fi

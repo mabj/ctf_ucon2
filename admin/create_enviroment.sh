@@ -5,6 +5,8 @@ rm -rf ctf_ucon2
 install -d ./ctf_ucon2/admin
 cp -af create_user.sh ./ctf_ucon2/admin
 cp -af remove_user.sh ./ctf_ucon2/admin
+cp -af sendEmail-v1.55/ ./ctf_ucon2/admin
+cp -af setup.sh ./ctf_ucon2/admin
 
 install -d ./ctf_ucon2/admin/code
 install -d ./ctf_ucon2/admin/code/crackme
