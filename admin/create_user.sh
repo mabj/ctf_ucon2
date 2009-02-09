@@ -107,28 +107,6 @@ for i in $(/bin/ls ./code/vulndev/*.c) ; do
   ${CHATTR} +a "${WORKDIR}/vulndev/${PROGRAM}/${PROGRAM}.tag"
 done
 
-# Build holygrail challenges
-${ECHO} "[+] Building holygrail challenges ..."
-for i in $(/bin/ls ./code/holygrail/*.c) ; do
-  # Create challenge directory
-  PROGRAM=`/bin/echo $i | /usr/bin/awk -F "/" '{print $4}' | /usr/bin/awk -F "." '{print $1}'`
-  ${INSTALL} "${WORKDIR}/holygrail/${PROGRAM}"
-  # Define challenge directory permissions
-  ${CHOWN} ${1}.${1} "${WORKDIR}/holygrail"
-  ${CHOWN} ${1}.${1} "${WORKDIR}/holygrail/${PROGRAM}"
-  # Compile challenge and configure its permissions
-  ${GCC} "${WORKDIR}/holygrail/$PROGRAM/${PROGRAM}" ${i}
-  ${CP} ${i} "${WORKDIR}/holygrail/${PROGRAM}/"
-  ${CHOWN} ${PROGRAM}.${PROGRAM} "${WORKDIR}/holygrail/${PROGRAM}/${PROGRAM}"
-  ${CHMOD} 4555 "${WORKDIR}/holygrail/${PROGRAM}/${PROGRAM}"
-  ${CHATTR} +i "${WORKDIR}/holygrail/${PROGRAM}/${PROGRAM}"
-  # Create the challenge tag file
-  ${TOUCH} "${WORKDIR}/holygrail/${PROGRAM}/${PROGRAM}.tag"
-  ${CHOWN} ${PROGRAM}.${PROGRAM} "${WORKDIR}/holygrail/${PROGRAM}/${PROGRAM}.tag"
-  ${CHMOD} 0600 "${WORKDIR}/holygrail/${PROGRAM}/${PROGRAM}.tag"
-  ${CHATTR} +a "${WORKDIR}/holygrail/${PROGRAM}/${PROGRAM}.tag"
-done
-
 # Copying workdir to the user home
 ${ECHO} "[+] Copying workdir to the users' home..."
 ${CP} ${WORKDIR} "/home/${1}"
