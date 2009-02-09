@@ -48,8 +48,6 @@ for i in $(seq -w 1 11); do
 	${USERMOD} -s "/bin/false" challenge_${i} 
 done
 
-${ECHO} "[+] cleanup workdir ... "
-${RM} ${WORKDIR} 
 
 # Adding user ...
 ${ECHO} "[+] Adding group ..."
@@ -59,6 +57,17 @@ ${ECHO} "[+] Adding user ..."
 RANDPASS=`${PASSWORD}`
 ${USERADD} ${1} -d /home/${1} -m -g ${1} -p $(${OPENSSL} passwd -1 ${RANDPASS})
 ${CHMOD} -R 0700 /home/${1}
+
+if [ -e ${WORKDIR} ]; then
+  ${FIND} ${WORKDIR} -iname *.tag -exec ${CHATTR} -a {} \;
+  ${FIND} ${WORKDIR} -iname *.tag -exec ${CHATTR} -i {} \;
+  ${FIND} ${WORKDIR} -iname challen* -exec ${CHATTR} -a {} \;
+  ${FIND} ${WORKDIR} -iname challen* -exec ${CHATTR} -i {} \;
+  ${RM}
+fi
+
+${ECHO} "[+] cleanup workdir ... "
+${RM} ${WORKDIR} 
 
 ${ECHO} "[+] Changing workdir privileges..."
 ${INSTALL} ${WORKDIR}
