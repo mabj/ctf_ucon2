@@ -46,11 +46,12 @@ class CTFBot
     end
   end
 
-  def __register_user_point(challenge_id = 0, user_id = 0, user_name = '')
-    rows = @dbh.execute('select user_id, challenge_id from user_challenges where challenge_id = ? AND user_id = ?')
+  def __register_user_point(challenge_id = 0, user_name = '')
+    rows = @dbh.execute('select user_id, challenge_id from user_challenges where user_id IN (select id from users where name = ?) AND challenge_id = ?', user_name, challenge_id)
     if rows.size.zero?
       @logger.info("Mark a point to user: #{user_name}")
-      @dbh.execute('insert into user_challenges values (?, ?)', challenge_id, user_id)
+      rows = @dbh.execute("select id from users where name = ?", user_name)
+      @dbh.execute('insert into user_challenges values (?, ?)',rows[0][0], challenge_id)
     end
   end
 
@@ -66,7 +67,7 @@ class CTFBot
       file_stat = File::Stat.new(r)
       rows = @dbh.execute('SELECT id, uid from challenges where uid = ?', file_stat.uid)
       if file_stat.size > 5 && ! rows.size.zero?
-        __register_user_point(rows.first[0], rows.first[1], user)
+        __register_user_point(rows.first[1], user)
       end
     }
   end
