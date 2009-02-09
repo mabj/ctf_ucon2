@@ -33,8 +33,6 @@ loop do
   Thread.start(server.accept) do |socket|
     socket.puts "\n" * 40
     @user_counter += 1
-    @logger.info(@user_counter)
-    @logger.info(LIMIT_USERS)
 
     if @user_counter <= LIMIT_USERS
       @logger.info("[+] Novo cliente [#{Thread.current.object_id.abs}] estabeleceu a conexao")
