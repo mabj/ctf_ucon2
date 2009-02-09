@@ -5,12 +5,13 @@ CAT="/bin/cat"
 SED="/bin/sed"
 ECHO="/bin/echo -e"
 IPTABLES="/sbin/iptables"
+PING="/bin/ping -c1"
 ARP="/usr/sbin/arp -s"
 
 # Check user permissions
 WHOAMI=`/usr/bin/whoami`
 if [ "${WHOAMI}" != "root" ]; then
-  ${ECHO} "[+] This script needs to be run as root!"
+  ${ECHO} "[!] This script needs to be run as root!"
   exit 1
 fi
 
@@ -30,11 +31,22 @@ ${ECHO} 0 > /proc/sys/kernel/randomize_va_space
 ${ECHO} "[+] Defining syslog verbosity"
 ${ECHO} "4 1 1 7" > /proc/sys/kernel/printk
 
+# Network informations
+${ECHO} "[+] Collecting network informations..."
+IPADDR=`/sbin/ifconfig eth0 | /bin/grep "inet addr" | /usr/bin/awk -F " " '{print $2}' | /usr/bin/awk -F ":" '{print $2}'`
+MACADDR="00:0C:29:76:BC:AC"
+
 # Preventing ARP spoof
 ${ECHO} "[+] Setting up static MAC address..."
-MACADDR="00:0C:29:76:BC:AC"
-IPADDR=`/sbin/ifconfig eth0 | /bin/grep "inet addr" | /usr/bin/awk -F " " '{print $2}' | /usr/bin/awk -F ":" '{print $2}'`
-${ARP} ${IPADDR} ${MACADDR}
+GWADDR=`/sbin/route -n | /usr/bin/tail -1 | /usr/bin/awk '{print $2}'`
+ARPCACHE=`/usr/sbin/arp -a | /bin/grep ${GWADDR}`
+
+if [ -z "${ARPCACHE}" ]; then
+  ${PING} ${GEADDR}
+fi
+
+GWMAC=`/usr/sbin/arp -a 192.168.1.1 | /usr/bin/awk '{print $4}'`
+${ARP} ${GWADDR} ${GWMAC}
 
 # Setting local firewall configuration parameters
 ${ECHO} "[+] Configuring local firewall (iptables/netfilter based)..."
