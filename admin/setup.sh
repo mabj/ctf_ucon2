@@ -39,10 +39,10 @@ MACADDR="00:0C:29:76:BC:AC"
 # Preventing ARP spoof
 ${ECHO} "[+] Setting up static MAC address..."
 GWADDR=`/sbin/route -n | /usr/bin/tail -1 | /usr/bin/awk '{print $2}'`
-ARPCACHE=`/usr/sbin/arp -a | /bin/grep ${GWADDR}`
+ARPCACHE=`/usr/sbin/arp ${GWADDR}`
 
-if [ -z "${ARPCACHE}" ]; then
-  ${PING} ${GEADDR}
+if [ "${ARPCACHE}" == "192.168.1.1 (192.168.1.1) -- no entry" ]; then
+  ${PING} ${GWADDR}
 fi
 
 GWMAC=`/usr/sbin/arp -a 192.168.1.1 | /usr/bin/awk '{print $4}'`
