@@ -15,6 +15,7 @@ cp -af ../format/challenge_01.c ./ctf_ucon2/admin/code/vulndev/challenge_06.c
 cp -af ../stack/challenge_01.c ./ctf_ucon2/admin/code/vulndev/challenge_07.c
 cp -af ../stack/challenge_04.c ./ctf_ucon2/admin/code/vulndev/challenge_08.c
 cp -af ../format/challenge_03.c ./ctf_ucon2/admin/code/vulndev/challenge_09.c
+cp -af ../stack/challenge_06.c ./ctf_ucon2/admin/code/vulndev/challenge_10.c
 cp -af ../stack/challenge_05.c ./ctf_ucon2/admin/code/holygrail/challenge_11.c
 
 install -d ./ctf_ucon2/admin/interface/telnetd

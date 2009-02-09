@@ -62,9 +62,10 @@ void __print_sw_title (char *sw_name) {
 
 void __create_tag (char *id) {
   FILE *fd;
-  char *tag_name = (char *)malloc(38 * sizeof(char));
-  memset(tag_name, '\0', 38);
-  snprintf(tag_name,34, "./score/%s_response", id);
+  char *tag_name = (char *)malloc(24 * sizeof(char));
+  memset(tag_name, '\0', 24);
+  snprintf(tag_name,24, "./%s.tag", id);
   fd = fopen(tag_name, "w");
+  fprintf(fd, "Bang!!\n");
   if (fd != NULL) fclose(fd);
 }

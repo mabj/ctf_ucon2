@@ -65,7 +65,7 @@ class CTFBot
       file_name = r.split('\/').last
       file_stat = File::Stat.new(r)
       rows = @dbh.execute('SELECT id, uid from challenges where uid = ?', file_stat.uid)
-      unless rows.size.zero?
+      if file_stat.size > 5 && ! rows.size.zero?
         __register_user_point(rows.first[0], rows.first[1], user)
       end
 
@@ -74,9 +74,9 @@ class CTFBot
   end
 
   def __get_results (user)
-    crackme = Dir.glob(@home_dir + user + '/ucon2/crackme/*/score/*_response')
-    vulndev = Dir.glob(@home_dir + user  + '/ucon2/vulndev/*/score/*_response')
-    special = Dir.glob(@home_dir + user + '/ucon2/holygrail/*/score/*_response')
+    crackme = Dir.glob(@home_dir + user + '/ucon2/crackme/*/*.tag')
+    vulndev = Dir.glob(@home_dir + user  + '/ucon2/vulndev/*/*.tag')
+    special = Dir.glob(@home_dir + user + '/ucon2/holygrail/*/*.tag')
 
     crackme + vulndev + special
   end

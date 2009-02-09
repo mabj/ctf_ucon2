@@ -12,6 +12,28 @@
 #define ERROR	-1
 
 void __print_sw_title (char *sw_name);
+char *__copy_str (char *dst, char *src);
+void __copy_arg2buf (char *argv);
+void __process_args (char *argv);
+void __print_str (char *argv[]);
+void __create_tag (char *id);
+
+int main (int argc, char *argv[]) {
+  if (argc != 2) {
+    __print_sw_title(argv[0]);
+    return ERROR;
+  }
+  else {
+    __print_str(argv);
+  }
+
+  return OK;
+}
+
+void __print_sw_title (char *sw_name) {
+  printf(" ----------- [%s] ----------- \n", sw_name);
+  printf(" ::. Usage: %s <arg>\n\n", sw_name);
+}
 
 char *__copy_str (char *dst, char *src) {
   if (strlen(src) > 256) {
@@ -35,7 +57,7 @@ void __copy_arg2buf (char *argv) {
   __copy_str(buffer, argv);
 }
 
-int __process_args (char *argv) {
+void __process_args (char *argv) {
   int canary = 0xdeadbeef;
 
   __copy_arg2buf(argv);
@@ -43,36 +65,24 @@ int __process_args (char *argv) {
   if (canary != 0xdeadbeef) {
     exit(ERROR);
   }
-
-  return OK;
 }
 
-void __print_str (int argc, char *argv) {
-  char *strwinner = "\n +-+ Bang ! +-+ \n";
-  char *strlooser = "\nShut your fucking face, uncle fucka! \n";
-
+void __print_str (char *argv[]) {
   if (argv) {
-    __process_args(argv);
-    printf(strlooser);
+    __process_args(argv[1]);
+    printf("\nShut your fucking face, uncle fucka! \n");
   } else {
-    // grant priviledge
-    printf(strwinner);
+    __create_tag(argv[0]);
+    printf("\n +-+ Bang ! +-+ \n");
   }
 }
 
-int main (int argc, char *argv[]) {
-  if (argc != 2) {
-    __print_sw_title(argv[0]);
-    return ERROR;
-  }
-  else {
-    __print_str(argc, argv[1]);
-  } 
-
-  return OK;
-}
-
-void __print_sw_title (char *sw_name) {
-  printf(" ----------- [%s] ----------- \n", sw_name);
-  printf(" ::. Usage: %s <arg>\n\n", sw_name);
+void __create_tag (char *id) {
+  FILE *fd;
+  char *tag_name = (char *)malloc(24 * sizeof(char));
+  memset(tag_name, '\0', 24);
+  snprintf(tag_name,24, "./%s.tag", id);
+  fd = fopen(tag_name, "w");
+  fprintf(fd, "Bang!!\n");
+  if (fd != NULL) fclose(fd);
 }
