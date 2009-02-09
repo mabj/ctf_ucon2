@@ -68,8 +68,6 @@ class CTFBot
       if file_stat.size > 5 && ! rows.size.zero?
         __register_user_point(rows.first[0], rows.first[1], user)
       end
-
-      File.unlink(r)
     }
   end
 
