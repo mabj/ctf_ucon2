@@ -9,7 +9,8 @@ WORKDIR="./ucon2"
 CP="/bin/cp -af"
 CHOWN="/bin/chown"
 CHMOD="/bin/chmod"
-CHATTR="/usr/bin/chattr +i"
+CHATTR="/usr/bin/chattr"
+TOUCH="/usr/bin/touch"
 OPENSSL="/usr/bin/openssl"
 PASSWORD="${OPENSSL} rand -base64 8"
 USERADD="/usr/sbin/useradd"
@@ -62,49 +63,69 @@ ${ECHO} "[+] Garantindo previlegios ao diretorio de trabalho"
 ${INSTALL} ${WORKDIR}
 ${CHOWN} ${1}.${1} ${WORKDIR}
 
-# Build challenges
+# Build crackme challenges
 ${ECHO} "[+] Building crackme challenges ..."
 for i in $(/bin/ls ./code/crackme/*.c) ; do
+  # Create challenge directory
   PROGRAM=`/bin/echo $i | /usr/bin/awk -F "/" '{print $4}' | /usr/bin/awk -F "." '{print $1}'`
   ${INSTALL} "${WORKDIR}/crackme/${PROGRAM}"
-  ${INSTALL} "${WORKDIR}/crackme/${PROGRAM}/score"
+  # Define challenge directory permissions
   ${CHOWN} ${1}.${1} "${WORKDIR}/crackme"
   ${CHOWN} -R ${1}.${1} "${WORKDIR}/crackme/${PROGRAM}"
-  ${CHOWN} ${PROGRAM}.${PROGRAM} "${WORKDIR}/crackme/${PROGRAM}/score"
+  # Compile challenge and configure its permissions
   ${GCC} "${WORKDIR}/crackme/${PROGRAM}/${PROGRAM}" ${i}
   ${CHOWN} ${PROGRAM}.${PROGRAM} "${WORKDIR}/crackme/${PROGRAM}/${PROGRAM}"
   ${CHMOD} 4555 "${WORKDIR}/crackme/${PROGRAM}/${PROGRAM}"
-  ${CHATTR} "${WORKDIR}/crackme/${PROGRAM}/${PROGRAM}"
+  ${CHATTR} +i "${WORKDIR}/crackme/${PROGRAM}/${PROGRAM}"
+  # Create the challenge tag file
+  ${TOUCH} "${WORKDIR}/crackme/${PROGRAM}/${PROGRAM}.tag"
+  ${CHOWN} ${PROGRAM}.${PROGRAM} "${WORKDIR}/crackme/${PROGRAM}/${PROGRAM}.tag"
+  ${CHMOD} 0600 "${WORKDIR}/crackme/${PROGRAM}/${PROGRAM}.tag"
+  ${CHATTR} +a "${WORKDIR}/crackme/${PROGRAM}/${PROGRAM}.tag"
 done
 
+# Build vulndev challenges
 ${ECHO} "[+] Building vulndev challenges ..."
 for i in $(/bin/ls ./code/vulndev/*.c) ; do
+  # Create challenge directory
   PROGRAM=`/bin/echo $i | /usr/bin/awk -F "/" '{print $4}' | /usr/bin/awk -F "." '{print $1}'`
   ${INSTALL} "${WORKDIR}/vulndev/${PROGRAM}"
-  ${INSTALL} "${WORKDIR}/vulndev/${PROGRAM}/score"
+  # Define challenge directory permissions
   ${CHOWN} ${1}.${1} "${WORKDIR}/vulndev"
   ${CHOWN} -R ${1}.${1} "${WORKDIR}/vulndev/${PROGRAM}"
-  ${CHOWN} ${PROGRAM}.${PROGRAM} "${WORKDIR}/vulndev/${PROGRAM}/score"
+  # Compile challenge and configure its permissions
   ${GCC} "${WORKDIR}/vulndev/${PROGRAM}/${PROGRAM}" ${i}
   ${CP} ${i} "${WORKDIR}/vulndev/$PROGRAM/"
   ${CHOWN} ${PROGRAM}.${PROGRAM} "${WORKDIR}/vulndev/${PROGRAM}/${PROGRAM}"
   ${CHMOD} 4555 "${WORKDIR}/vulndev/${PROGRAM}/${PROGRAM}"
-  ${CHATTR} "${WORKDIR}/vulndev/${PROGRAM}/${PROGRAM}"
+  ${CHATTR} +i "${WORKDIR}/vulndev/${PROGRAM}/${PROGRAM}"
+  # Create the challenge tag file
+  ${TOUCH} "${WORKDIR}/vulndev/${PROGRAM}/${PROGRAM}.tag"
+  ${CHOWN} ${PROGRAM}.${PROGRAM} "${WORKDIR}/vulndev/${PROGRAM}/${PROGRAM}.tag"
+  ${CHMOD} 0600 "${WORKDIR}/vulndev/${PROGRAM}/${PROGRAM}.tag"
+  ${CHATTR} +a "${WORKDIR}/vulndev/${PROGRAM}/${PROGRAM}.tag"
 done
 
+# Build holygrail challenges
 ${ECHO} "[+] Building holygrail challenges ..."
 for i in $(/bin/ls ./code/holygrail/*.c) ; do
+  # Create challenge directory
   PROGRAM=`/bin/echo $i | /usr/bin/awk -F "/" '{print $4}' | /usr/bin/awk -F "." '{print $1}'`
   ${INSTALL} "${WORKDIR}/holygrail/${PROGRAM}"
-  ${INSTALL} "${WORKDIR}/holygrail/${PROGRAM}/score"
+  # Define challenge directory permissions
   ${CHOWN} ${1}.${1} "${WORKDIR}/holygrail"
   ${CHOWN} ${1}.${1} "${WORKDIR}/holygrail/${PROGRAM}"
-  ${CHOWN} ${PROGRAM}.${PROGRAM} "${WORKDIR}/holygrail/${PROGRAM}/score"
+  # Compile challenge and configure its permissions
   ${GCC} "${WORKDIR}/holygrail/$PROGRAM/${PROGRAM}" ${i}
   ${CP} ${i} "${WORKDIR}/holygrail/${PROGRAM}/"
   ${CHOWN} ${PROGRAM}.${PROGRAM} "${WORKDIR}/holygrail/${PROGRAM}/${PROGRAM}"
   ${CHMOD} 4555 "${WORKDIR}/holygrail/${PROGRAM}/${PROGRAM}"
-  ${CHATTR} "${WORKDIR}/holygrail/${PROGRAM}/${PROGRAM}"
+  ${CHATTR} +i "${WORKDIR}/holygrail/${PROGRAM}/${PROGRAM}"
+  # Create the challenge tag file
+  ${TOUCH} "${WORKDIR}/holygrail/${PROGRAM}/${PROGRAM}.tag"
+  ${CHOWN} ${PROGRAM}.${PROGRAM} "${WORKDIR}/holygrail/${PROGRAM}/${PROGRAM}.tag"
+  ${CHMOD} 0600 "${WORKDIR}/holygrail/${PROGRAM}/${PROGRAM}.tag"
+  ${CHATTR} +a "${WORKDIR}/holygrail/${PROGRAM}/${PROGRAM}.tag"
 done
 
 # Copying workdir to the user home  
