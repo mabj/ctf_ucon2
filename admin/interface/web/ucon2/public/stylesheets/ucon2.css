@@ -7,6 +7,7 @@ body {
 }
 
 #head {
+	margin-top: 20px;
 	width: 800px;
 	height: 170px;
 	background-color: #FFFFFF;
@@ -32,7 +33,44 @@ body {
 	width: 198px;
 	height: 493px;
 	background: #FFFFFF;
+	font-size: 14px;
+	font-weight: bold;
+	text-align: center;
+	padding: 0;
+	margin: 0;
 }
+
+#menu ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+#menu li {
+	margin: 2px;
+	list-style-type: none;
+	background: #000000;
+	color: #FFFFFF;
+}
+
+
+#menu li:hover {
+	background: #FFFFFF;
+	color: #000000;
+}
+
+#menu li a {
+	font-weight:bold;
+	text-decoration: none;
+	color: #FFFFFF;
+}
+
+#menu li a:hover {
+	background-color: #FFFFFF;
+	color: #000000;
+}
+
+
 
 #content {
 	display: block;
