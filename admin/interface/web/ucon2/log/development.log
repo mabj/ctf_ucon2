@@ -1,26 +1,319 @@
+# Logfile created on Sun Feb 15 23:18:08 -0500 2009
 
-
-Processing CtfController#index (for 127.0.0.1 at 2009-02-13 18:11:09) [GET]
-Rendering ctf/index
-Completed in 6ms (View: 1, DB: 0) | 200 OK [http://localhost/ctf/]
-
-
-Processing CtfController#index (for 127.0.0.1 at 2009-02-13 18:18:01) [GET]
+Processing CtfController#index (for 172.21.17.254 at 2009-02-15 23:18:20) [GET]
 Rendering template within layouts/application
 Rendering ctf/index
+Completed in 24ms (View: 10, DB: 0) | 200 OK [http://172.21.9.66/]
 
 
-ActionView::TemplateError (undefined local variable or method `flash_message' for #<ActionView::Base:0xb73e319c>) on line #10 of app/views/layouts/application.html.erb:
-7:   </head>
-8: 
+Processing CtfController#index (for 172.21.17.254 at 2009-02-15 23:27:41) [GET]
+Rendering template within layouts/application
+Rendering ctf/index
+Completed in 45ms (View: 15, DB: 0) | 200 OK [http://172.21.9.66/]
+
+
+Processing CtfController#index (for 172.21.17.254 at 2009-02-15 23:27:42) [GET]
+Rendering template within layouts/application
+Rendering ctf/index
+Completed in 30ms (View: 11, DB: 0) | 200 OK [http://172.21.9.66/]
+
+
+Processing CtfController#index (for 172.21.17.254 at 2009-02-15 23:28:30) [GET]
+Rendering template within layouts/application
+Rendering ctf/index
+Completed in 36ms (View: 11, DB: 0) | 200 OK [http://172.21.9.66/]
+
+
+Processing CtfController#index (for 172.21.17.254 at 2009-02-15 23:28:41) [GET]
+Rendering template within layouts/application
+Rendering ctf/index
+Completed in 21ms (View: 10, DB: 0) | 200 OK [http://172.21.9.66/]
+
+
+Processing CtfController#index (for 172.21.17.254 at 2009-02-15 23:28:41) [GET]
+Rendering template within layouts/application
+Rendering ctf/index
+Completed in 21ms (View: 11, DB: 0) | 200 OK [http://172.21.9.66/]
+
+
+Processing CtfController#index (for 172.21.17.254 at 2009-02-15 23:28:45) [GET]
+Rendering template within layouts/application
+Rendering ctf/index
+Completed in 27ms (View: 15, DB: 0) | 200 OK [http://172.21.9.66/]
+
+
+Processing CtfController#index (for 172.21.17.254 at 2009-02-15 23:28:55) [GET]
+Rendering template within layouts/application
+Rendering ctf/index
+Completed in 24ms (View: 9, DB: 0) | 200 OK [http://172.21.9.66/]
+
+
+Processing CtfController#index (for 172.21.17.254 at 2009-02-15 23:31:40) [GET]
+Rendering template within layouts/application
+Rendering ctf/index
+Completed in 23ms (View: 8, DB: 0) | 200 OK [http://172.21.9.66/]
+
+
+Processing ApplicationController#index (for 172.21.17.254 at 2009-02-15 23:31:41) [GET]
+
+
+ActionController::RoutingError (No route matches "/images/logo_ucon" with {:method=>:get}):
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/routing/recognition_optimisation.rb:66:in `recognize_path'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/routing/route_set.rb:386:in `recognize'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:182:in `handle_request'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:110:in `dispatch_unlocked'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:123:in `dispatch'
+    /usr/lib/ruby/1.8/thread.rb:135:in `synchronize'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:122:in `dispatch'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:132:in `dispatch_cgi'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:39:in `dispatch'
+    /usr/lib/ruby/gems/1.8/gems/rails-2.2.2/lib/webrick_server.rb:103:in `handle_dispatch'
+    /usr/lib/ruby/gems/1.8/gems/rails-2.2.2/lib/webrick_server.rb:74:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    /usr/lib/ruby/gems/1.8/gems/rails-2.2.2/lib/webrick_server.rb:60:in `dispatch'
+    /usr/lib/ruby/gems/1.8/gems/rails-2.2.2/lib/commands/servers/webrick.rb:66
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:153:in `require'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:153:in `require'
+    /usr/lib/ruby/gems/1.8/gems/rails-2.2.2/lib/commands/server.rb:49
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+
+Rendering /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/layout.erb (not_found)
+
+
+Processing CtfController#index (for 172.21.17.254 at 2009-02-15 23:31:42) [GET]
+Rendering template within layouts/application
+Rendering ctf/index
+Completed in 36ms (View: 20, DB: 0) | 200 OK [http://172.21.9.66/]
+
+
+Processing ApplicationController#index (for 172.21.17.254 at 2009-02-15 23:31:42) [GET]
+
+
+ActionController::RoutingError (No route matches "/images/logo_ucon" with {:method=>:get}):
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/routing/recognition_optimisation.rb:66:in `recognize_path'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/routing/route_set.rb:386:in `recognize'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:182:in `handle_request'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:110:in `dispatch_unlocked'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:123:in `dispatch'
+    /usr/lib/ruby/1.8/thread.rb:135:in `synchronize'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:122:in `dispatch'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:132:in `dispatch_cgi'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:39:in `dispatch'
+    /usr/lib/ruby/gems/1.8/gems/rails-2.2.2/lib/webrick_server.rb:103:in `handle_dispatch'
+    /usr/lib/ruby/gems/1.8/gems/rails-2.2.2/lib/webrick_server.rb:74:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    /usr/lib/ruby/gems/1.8/gems/rails-2.2.2/lib/webrick_server.rb:60:in `dispatch'
+    /usr/lib/ruby/gems/1.8/gems/rails-2.2.2/lib/commands/servers/webrick.rb:66
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:153:in `require'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:153:in `require'
+    /usr/lib/ruby/gems/1.8/gems/rails-2.2.2/lib/commands/server.rb:49
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+
+Rendering /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/layout.erb (not_found)
+
+
+Processing CtfController#index (for 172.21.17.254 at 2009-02-15 23:31:49) [GET]
+Rendering template within layouts/application
+Rendering ctf/index
+Completed in 22ms (View: 9, DB: 0) | 200 OK [http://172.21.9.66/]
+
+
+Processing CtfController#index (for 172.21.17.254 at 2009-02-15 23:31:58) [GET]
+Rendering template within layouts/application
+Rendering ctf/index
+Completed in 33ms (View: 17, DB: 0) | 200 OK [http://172.21.9.66/]
+
+
+Processing CtfController#index (for 172.21.17.254 at 2009-02-15 23:32:06) [GET]
+Rendering template within layouts/application
+Rendering ctf/index
+Completed in 25ms (View: 10, DB: 0) | 200 OK [http://172.21.9.66/]
+
+
+Processing CtfController#index (for 172.21.17.254 at 2009-02-15 23:32:13) [GET]
+Rendering template within layouts/application
+Rendering ctf/index
+Completed in 26ms (View: 9, DB: 0) | 200 OK [http://172.21.9.66/]
+
+
+Processing CtfController#index (for 172.21.17.254 at 2009-02-15 23:32:21) [GET]
+Rendering template within layouts/application
+Rendering ctf/index
+Completed in 21ms (View: 8, DB: 0) | 200 OK [http://172.21.9.66/]
+
+
+Processing CtfController#index (for 172.21.17.254 at 2009-02-15 23:32:59) [GET]
+Rendering template within layouts/application
+Rendering ctf/index
+Completed in 24ms (View: 12, DB: 0) | 200 OK [http://172.21.9.66/]
+
+
+Processing CtfController#index (for 172.21.17.254 at 2009-02-15 23:36:33) [GET]
+Rendering template within layouts/application
+Rendering ctf/index
+ERROR: compiling _run_erb_app47views47layouts47application46html46erb RAISED compile error
+/root/ctf_ucon2/admin/interface/web/ucon2/app/views/layouts/application.html.erb:12: syntax error, unexpected ',', expecting ')'
+@output_buffer.concat "         <div id=\"ucon_logo\"> "; @output_buffer.concat(( image_tag("logo_ucon.jpg"), :height => "200px" , :with => "53px" ).to_s); @output_buffer.concat " </div>\n"
+                                                                                                             ^
+/root/ctf_ucon2/admin/interface/web/ucon2/app/views/layouts/application.html.erb:12: syntax error, unexpected ',', expecting ')'
+@output_buffer.concat "         <div id=\"ucon_logo\"> "; @output_buffer.concat(( image_tag("logo_ucon.jpg"), :height => "200px" , :with => "53px" ).to_s); @output_buffer.concat " </div>\n"
+                                                                                                                                  ^
+/root/ctf_ucon2/admin/interface/web/ucon2/app/views/layouts/application.html.erb:13: syntax error, unexpected ',', expecting ')'
+@output_buffer.concat "\t <div id=\"bug_logo\"> "; @output_buffer.concat(( image_tag("bug.jpg"), :height => "200px", :width => "193px" ).to_s); @output_buffer.concat " </div>\n"
+                                                                                                ^
+/root/ctf_ucon2/admin/interface/web/ucon2/app/views/layouts/application.html.erb:13: syntax error, unexpected ',', expecting ')'
+@output_buffer.concat "\t <div id=\"bug_logo\"> "; @output_buffer.concat(( image_tag("bug.jpg"), :height => "200px", :width => "193px" ).to_s); @output_buffer.concat " </div>\n"
+                                                                                                                    ^
+Function body:           def _run_erb_app47views47layouts47application46html46erb(local_assigns)
+            old_output_buffer = output_buffer;;@output_buffer = '';  __in_erb_template=true ; @output_buffer.concat "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n"
+@output_buffer.concat "<html xmlns=\"http://www.w3.org/1999/xhtml\">\n"
+@output_buffer.concat "  <head>\n"
+@output_buffer.concat "    <meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" />\n"
+@output_buffer.concat "    <title>uCon Security Conference</title>\n"
+@output_buffer.concat "    "; @output_buffer.concat((  stylesheet_link_tag 'ucon2').to_s); @output_buffer.concat "\n"
+@output_buffer.concat "  </head>\n"
+@output_buffer.concat "\n"
+@output_buffer.concat "  <body>\n"
+@output_buffer.concat "    <center>\n"
+@output_buffer.concat "      <div id=\"head\">\n"
+@output_buffer.concat "         <div id=\"ucon_logo\"> "; @output_buffer.concat(( image_tag("logo_ucon.jpg"), :height => "200px" , :with => "53px" ).to_s); @output_buffer.concat " </div>\n"
+@output_buffer.concat "\t <div id=\"bug_logo\"> "; @output_buffer.concat(( image_tag("bug.jpg"), :height => "200px", :width => "193px" ).to_s); @output_buffer.concat " </div>\n"
+@output_buffer.concat "      </div>\n"
+@output_buffer.concat "      <div id=\"container\">\n"
+@output_buffer.concat "        "; @output_buffer.concat(( yield ).to_s); @output_buffer.concat "\n"
+@output_buffer.concat "      </div>\n"
+@output_buffer.concat "      <div id=\"footer\"> Footer </div>\n"
+@output_buffer.concat "    </center>\n"
+@output_buffer.concat "\n"
+@output_buffer.concat "\n"
+@output_buffer.concat "  </body>\n"
+@output_buffer.concat "</html>\n"
+@output_buffer.concat "\n"
+@output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /root/ctf_ucon2/admin/interface/web/ucon2/app/views/layouts/application.html.erb:28:in `compile!'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_view/renderable.rb:66:in `compile'
+/usr/lib/ruby/1.8/thread.rb:135:in `synchronize'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_view/renderable.rb:64:in `compile'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_view/renderable.rb:26:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_view/template.rb:73:in `render_template'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_view/base.rb:256:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_view/base.rb:371:in `_render_with_layout'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_view/base.rb:254:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:1174:in `render_for_file'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:896:in `render_without_benchmark'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:51:in `render'
+/usr/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/core_ext/benchmark.rb:8:in `realtime'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:51:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:868:in `render_without_benchmark'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:51:in `render'
+/usr/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/core_ext/benchmark.rb:8:in `realtime'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:51:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:1248:in `default_render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:1259:in `perform_action_without_filters'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:617:in `call_filters'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/rescue.rb:136:in `perform_action_without_caching'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/caching/sql_cache.rb:13:in `perform_action'
+/usr/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/usr/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/query_cache.rb:8:in `cache'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/caching/sql_cache.rb:12:in `perform_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:524:in `send'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:524:in `process_without_filters'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:606:in `process_without_session_management_support'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/session_management.rb:134:in `process'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:392:in `process'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:183:in `handle_request'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:110:in `dispatch_unlocked'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:123:in `dispatch'
+/usr/lib/ruby/1.8/thread.rb:135:in `synchronize'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:122:in `dispatch'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:132:in `dispatch_cgi'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:39:in `dispatch'
+/usr/lib/ruby/gems/1.8/gems/rails-2.2.2/lib/webrick_server.rb:103:in `handle_dispatch'
+/usr/lib/ruby/gems/1.8/gems/rails-2.2.2/lib/webrick_server.rb:74:in `service'
+/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+/usr/lib/ruby/gems/1.8/gems/rails-2.2.2/lib/webrick_server.rb:60:in `dispatch'
+/usr/lib/ruby/gems/1.8/gems/rails-2.2.2/lib/commands/servers/webrick.rb:66
+/usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+/usr/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:153:in `require'
+/usr/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:521:in `new_constants_in'
+/usr/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:153:in `require'
+/usr/lib/ruby/gems/1.8/gems/rails-2.2.2/lib/commands/server.rb:49
+/usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+script/server:3
+
+
+ActionView::TemplateError (compile error
+/root/ctf_ucon2/admin/interface/web/ucon2/app/views/layouts/application.html.erb:12: syntax error, unexpected ',', expecting ')'
+@output_buffer.concat "         <div id=\"ucon_logo\"> "; @output_buffer.concat(( image_tag("logo_ucon.jpg"), :height => "200px" , :with => "53px" ).to_s); @output_buffer.concat " </div>\n"
+                                                                                                             ^
+/root/ctf_ucon2/admin/interface/web/ucon2/app/views/layouts/application.html.erb:12: syntax error, unexpected ',', expecting ')'
+@output_buffer.concat "         <div id=\"ucon_logo\"> "; @output_buffer.concat(( image_tag("logo_ucon.jpg"), :height => "200px" , :with => "53px" ).to_s); @output_buffer.concat " </div>\n"
+                                                                                                                                  ^
+/root/ctf_ucon2/admin/interface/web/ucon2/app/views/layouts/application.html.erb:13: syntax error, unexpected ',', expecting ')'
+@output_buffer.concat "\t <div id=\"bug_logo\"> "; @output_buffer.concat(( image_tag("bug.jpg"), :height => "200px", :width => "193px" ).to_s); @output_buffer.concat " </div>\n"
+                                                                                                ^
+/root/ctf_ucon2/admin/interface/web/ucon2/app/views/layouts/application.html.erb:13: syntax error, unexpected ',', expecting ')'
+@output_buffer.concat "\t <div id=\"bug_logo\"> "; @output_buffer.concat(( image_tag("bug.jpg"), :height => "200px", :width => "193px" ).to_s); @output_buffer.concat " </div>\n"
+                                                                                                                    ^) on line #12 of app/views/layouts/application.html.erb:
 9:   <body>
-10:       <%= flash_message %>
-11:   </body>
-12: </html>
+10:     <center>
+11:       <div id="head">
+12:          <div id="ucon_logo"> <%= image_tag("logo_ucon.jpg"), :height => "200px" , :with => "53px" %> </div>
+13: 	 <div id="bug_logo"> <%= image_tag("bug.jpg"), :height => "200px", :width => "193px" %> </div>
+14:       </div>
+15:       <div id="container">
 
-    app/views/layouts/application.html.erb:10
-    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_view/renderable.rb:39:in `send'
-    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_view/renderable.rb:39:in `render'
+    app/views/layouts/application.html.erb:28:in `compile!'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_view/renderable.rb:66:in `compile'
+    /usr/lib/ruby/1.8/thread.rb:135:in `synchronize'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_view/renderable.rb:64:in `compile'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_view/renderable.rb:26:in `render'
     /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_view/template.rb:73:in `render_template'
     /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_view/base.rb:256:in `render'
     /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_view/base.rb:371:in `_render_with_layout'
@@ -54,7 +347,7 @@ ActionView::TemplateError (undefined local variable or method `flash_message' fo
     /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:183:in `handle_request'
     /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:110:in `dispatch_unlocked'
     /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:123:in `dispatch'
-    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:122:in `synchronize'
+    /usr/lib/ruby/1.8/thread.rb:135:in `synchronize'
     /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:122:in `dispatch'
     /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:132:in `dispatch_cgi'
     /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:39:in `dispatch'
@@ -82,27 +375,183 @@ ActionView::TemplateError (undefined local variable or method `flash_message' fo
     /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
     script/server:3
 
-Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/_trace (76.6ms)
-Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/_request_and_response (1.1ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/_trace (130.3ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/_request_and_response (12.6ms)
 Rendering /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
 
 
-Processing CtfController#index (for 127.0.0.1 at 2009-02-13 18:18:33) [GET]
+Processing CtfController#index (for 172.21.17.254 at 2009-02-15 23:36:34) [GET]
 Rendering template within layouts/application
 Rendering ctf/index
-Completed in 13ms (View: 4, DB: 0) | 200 OK [http://localhost/ctf/]
+ERROR: compiling _run_erb_app47views47layouts47application46html46erb RAISED compile error
+/root/ctf_ucon2/admin/interface/web/ucon2/app/views/layouts/application.html.erb:12: syntax error, unexpected ',', expecting ')'
+@output_buffer.concat "         <div id=\"ucon_logo\"> "; @output_buffer.concat(( image_tag("logo_ucon.jpg"), :height => "200px" , :with => "53px" ).to_s); @output_buffer.concat " </div>\n"
+                                                                                                             ^
+/root/ctf_ucon2/admin/interface/web/ucon2/app/views/layouts/application.html.erb:12: syntax error, unexpected ',', expecting ')'
+@output_buffer.concat "         <div id=\"ucon_logo\"> "; @output_buffer.concat(( image_tag("logo_ucon.jpg"), :height => "200px" , :with => "53px" ).to_s); @output_buffer.concat " </div>\n"
+                                                                                                                                  ^
+/root/ctf_ucon2/admin/interface/web/ucon2/app/views/layouts/application.html.erb:13: syntax error, unexpected ',', expecting ')'
+@output_buffer.concat "\t <div id=\"bug_logo\"> "; @output_buffer.concat(( image_tag("bug.jpg"), :height => "200px", :width => "193px" ).to_s); @output_buffer.concat " </div>\n"
+                                                                                                ^
+/root/ctf_ucon2/admin/interface/web/ucon2/app/views/layouts/application.html.erb:13: syntax error, unexpected ',', expecting ')'
+@output_buffer.concat "\t <div id=\"bug_logo\"> "; @output_buffer.concat(( image_tag("bug.jpg"), :height => "200px", :width => "193px" ).to_s); @output_buffer.concat " </div>\n"
+                                                                                                                    ^
+Function body:           def _run_erb_app47views47layouts47application46html46erb(local_assigns)
+            old_output_buffer = output_buffer;;@output_buffer = '';  __in_erb_template=true ; @output_buffer.concat "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n"
+@output_buffer.concat "<html xmlns=\"http://www.w3.org/1999/xhtml\">\n"
+@output_buffer.concat "  <head>\n"
+@output_buffer.concat "    <meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" />\n"
+@output_buffer.concat "    <title>uCon Security Conference</title>\n"
+@output_buffer.concat "    "; @output_buffer.concat((  stylesheet_link_tag 'ucon2').to_s); @output_buffer.concat "\n"
+@output_buffer.concat "  </head>\n"
+@output_buffer.concat "\n"
+@output_buffer.concat "  <body>\n"
+@output_buffer.concat "    <center>\n"
+@output_buffer.concat "      <div id=\"head\">\n"
+@output_buffer.concat "         <div id=\"ucon_logo\"> "; @output_buffer.concat(( image_tag("logo_ucon.jpg"), :height => "200px" , :with => "53px" ).to_s); @output_buffer.concat " </div>\n"
+@output_buffer.concat "\t <div id=\"bug_logo\"> "; @output_buffer.concat(( image_tag("bug.jpg"), :height => "200px", :width => "193px" ).to_s); @output_buffer.concat " </div>\n"
+@output_buffer.concat "      </div>\n"
+@output_buffer.concat "      <div id=\"container\">\n"
+@output_buffer.concat "        "; @output_buffer.concat(( yield ).to_s); @output_buffer.concat "\n"
+@output_buffer.concat "      </div>\n"
+@output_buffer.concat "      <div id=\"footer\"> Footer </div>\n"
+@output_buffer.concat "    </center>\n"
+@output_buffer.concat "\n"
+@output_buffer.concat "\n"
+@output_buffer.concat "  </body>\n"
+@output_buffer.concat "</html>\n"
+@output_buffer.concat "\n"
+@output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /root/ctf_ucon2/admin/interface/web/ucon2/app/views/layouts/application.html.erb:28:in `compile!'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_view/renderable.rb:66:in `compile'
+/usr/lib/ruby/1.8/thread.rb:135:in `synchronize'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_view/renderable.rb:64:in `compile'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_view/renderable.rb:26:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_view/template.rb:73:in `render_template'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_view/base.rb:256:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_view/base.rb:371:in `_render_with_layout'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_view/base.rb:254:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:1174:in `render_for_file'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:896:in `render_without_benchmark'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:51:in `render'
+/usr/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/core_ext/benchmark.rb:8:in `realtime'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:51:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:868:in `render_without_benchmark'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:51:in `render'
+/usr/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/core_ext/benchmark.rb:8:in `realtime'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:51:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:1248:in `default_render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:1259:in `perform_action_without_filters'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:617:in `call_filters'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/rescue.rb:136:in `perform_action_without_caching'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/caching/sql_cache.rb:13:in `perform_action'
+/usr/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/usr/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/query_cache.rb:8:in `cache'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/caching/sql_cache.rb:12:in `perform_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:524:in `send'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:524:in `process_without_filters'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:606:in `process_without_session_management_support'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/session_management.rb:134:in `process'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:392:in `process'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:183:in `handle_request'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:110:in `dispatch_unlocked'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:123:in `dispatch'
+/usr/lib/ruby/1.8/thread.rb:135:in `synchronize'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:122:in `dispatch'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:132:in `dispatch_cgi'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:39:in `dispatch'
+/usr/lib/ruby/gems/1.8/gems/rails-2.2.2/lib/webrick_server.rb:103:in `handle_dispatch'
+/usr/lib/ruby/gems/1.8/gems/rails-2.2.2/lib/webrick_server.rb:74:in `service'
+/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+/usr/lib/ruby/gems/1.8/gems/rails-2.2.2/lib/webrick_server.rb:60:in `dispatch'
+/usr/lib/ruby/gems/1.8/gems/rails-2.2.2/lib/commands/servers/webrick.rb:66
+/usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+/usr/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:153:in `require'
+/usr/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:521:in `new_constants_in'
+/usr/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:153:in `require'
+/usr/lib/ruby/gems/1.8/gems/rails-2.2.2/lib/commands/server.rb:49
+/usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+script/server:3
 
 
-Processing ApplicationController#index (for 127.0.0.1 at 2009-02-13 18:18:33) [GET]
+ActionView::TemplateError (compile error
+/root/ctf_ucon2/admin/interface/web/ucon2/app/views/layouts/application.html.erb:12: syntax error, unexpected ',', expecting ')'
+@output_buffer.concat "         <div id=\"ucon_logo\"> "; @output_buffer.concat(( image_tag("logo_ucon.jpg"), :height => "200px" , :with => "53px" ).to_s); @output_buffer.concat " </div>\n"
+                                                                                                             ^
+/root/ctf_ucon2/admin/interface/web/ucon2/app/views/layouts/application.html.erb:12: syntax error, unexpected ',', expecting ')'
+@output_buffer.concat "         <div id=\"ucon_logo\"> "; @output_buffer.concat(( image_tag("logo_ucon.jpg"), :height => "200px" , :with => "53px" ).to_s); @output_buffer.concat " </div>\n"
+                                                                                                                                  ^
+/root/ctf_ucon2/admin/interface/web/ucon2/app/views/layouts/application.html.erb:13: syntax error, unexpected ',', expecting ')'
+@output_buffer.concat "\t <div id=\"bug_logo\"> "; @output_buffer.concat(( image_tag("bug.jpg"), :height => "200px", :width => "193px" ).to_s); @output_buffer.concat " </div>\n"
+                                                                                                ^
+/root/ctf_ucon2/admin/interface/web/ucon2/app/views/layouts/application.html.erb:13: syntax error, unexpected ',', expecting ')'
+@output_buffer.concat "\t <div id=\"bug_logo\"> "; @output_buffer.concat(( image_tag("bug.jpg"), :height => "200px", :width => "193px" ).to_s); @output_buffer.concat " </div>\n"
+                                                                                                                    ^) on line #12 of app/views/layouts/application.html.erb:
+9:   <body>
+10:     <center>
+11:       <div id="head">
+12:          <div id="ucon_logo"> <%= image_tag("logo_ucon.jpg"), :height => "200px" , :with => "53px" %> </div>
+13: 	 <div id="bug_logo"> <%= image_tag("bug.jpg"), :height => "200px", :width => "193px" %> </div>
+14:       </div>
+15:       <div id="container">
 
-
-ActionController::RoutingError (No route matches "/stylesheets/ucon.css" with {:method=>:get}):
-    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/routing/recognition_optimisation.rb:66:in `recognize_path'
-    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/routing/route_set.rb:386:in `recognize'
-    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:182:in `handle_request'
+    app/views/layouts/application.html.erb:28:in `compile!'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_view/renderable.rb:66:in `compile'
+    /usr/lib/ruby/1.8/thread.rb:135:in `synchronize'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_view/renderable.rb:64:in `compile'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_view/renderable.rb:26:in `render'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_view/template.rb:73:in `render_template'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_view/base.rb:256:in `render'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_view/base.rb:371:in `_render_with_layout'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_view/base.rb:254:in `render'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:1174:in `render_for_file'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:896:in `render_without_benchmark'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:51:in `render'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/core_ext/benchmark.rb:8:in `realtime'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:51:in `render'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:868:in `render_without_benchmark'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:51:in `render'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/core_ext/benchmark.rb:8:in `realtime'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:51:in `render'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:1248:in `default_render'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:1259:in `perform_action_without_filters'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:617:in `call_filters'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/rescue.rb:136:in `perform_action_without_caching'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/caching/sql_cache.rb:13:in `perform_action'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/query_cache.rb:8:in `cache'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/caching/sql_cache.rb:12:in `perform_action'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:524:in `send'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:524:in `process_without_filters'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:606:in `process_without_session_management_support'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/session_management.rb:134:in `process'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:392:in `process'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:183:in `handle_request'
     /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:110:in `dispatch_unlocked'
     /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:123:in `dispatch'
-    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:122:in `synchronize'
+    /usr/lib/ruby/1.8/thread.rb:135:in `synchronize'
     /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:122:in `dispatch'
     /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:132:in `dispatch_cgi'
     /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:39:in `dispatch'
@@ -130,10 +579,690 @@ ActionController::RoutingError (No route matches "/stylesheets/ucon.css" with {:
     /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
     script/server:3
 
-Rendering /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/layout.erb (not_found)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/_trace (124.4ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/_request_and_response (3.8ms)
+Rendering /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
 
 
-Processing CtfController#index (for 127.0.0.1 at 2009-02-13 18:19:21) [GET]
+Processing CtfController#index (for 172.21.17.254 at 2009-02-15 23:37:14) [GET]
 Rendering template within layouts/application
 Rendering ctf/index
-Completed in 13ms (View: 4, DB: 0) | 200 OK [http://localhost/ctf/]
+Completed in 16ms (View: 8, DB: 0) | 200 OK [http://172.21.9.66/]
+
+
+Processing CtfController#index (for 172.21.17.254 at 2009-02-15 23:37:26) [GET]
+Rendering template within layouts/application
+Rendering ctf/index
+Completed in 20ms (View: 8, DB: 0) | 200 OK [http://172.21.9.66/]
+
+
+Processing CtfController#index (for 172.21.17.254 at 2009-02-15 23:37:27) [GET]
+Rendering template within layouts/application
+Rendering ctf/index
+Completed in 23ms (View: 13, DB: 0) | 200 OK [http://172.21.9.66/]
+
+
+Processing CtfController#index (for 172.21.17.254 at 2009-02-15 23:37:41) [GET]
+Rendering template within layouts/application
+Rendering ctf/index
+Completed in 21ms (View: 9, DB: 0) | 200 OK [http://172.21.9.66/]
+
+
+Processing CtfController#index (for 172.21.17.254 at 2009-02-15 23:39:20) [GET]
+Rendering template within layouts/application
+Rendering ctf/index
+Completed in 26ms (View: 16, DB: 0) | 200 OK [http://172.21.9.66/]
+
+
+Processing CtfController#index (for 172.21.17.254 at 2009-02-15 23:42:12) [GET]
+Rendering template within layouts/application
+Rendering ctf/index
+Completed in 31ms (View: 15, DB: 0) | 200 OK [http://172.21.9.66/]
+
+
+Processing CtfController#index (for 172.21.17.254 at 2009-02-15 23:43:00) [GET]
+Rendering template within layouts/application
+Rendering ctf/index
+Completed in 26ms (View: 15, DB: 0) | 200 OK [http://172.21.9.66/]
+
+
+Processing CtfController#index (for 172.21.17.254 at 2009-02-15 23:43:17) [GET]
+Rendering template within layouts/application
+Rendering ctf/index
+Completed in 23ms (View: 12, DB: 0) | 200 OK [http://172.21.9.66/]
+
+
+Processing CtfController#index (for 172.21.17.254 at 2009-02-15 23:44:00) [GET]
+Rendering template within layouts/application
+Rendering ctf/index
+Completed in 22ms (View: 12, DB: 0) | 200 OK [http://172.21.9.66/]
+
+
+Processing CtfController#index (for 172.21.17.254 at 2009-02-15 23:44:01) [GET]
+Rendering template within layouts/application
+Rendering ctf/index
+Completed in 26ms (View: 10, DB: 0) | 200 OK [http://172.21.9.66/]
+
+
+Processing CtfController#index (for 172.21.17.254 at 2009-02-15 23:44:19) [GET]
+Rendering template within layouts/application
+Rendering ctf/index
+Completed in 15ms (View: 8, DB: 0) | 200 OK [http://172.21.9.66/]
+
+
+Processing CtfController#index (for 172.21.17.254 at 2009-02-15 23:44:58) [GET]
+Rendering template within layouts/application
+Rendering ctf/index
+Completed in 23ms (View: 15, DB: 0) | 200 OK [http://172.21.9.66/]
+
+
+Processing CtfController#index (for 172.21.17.254 at 2009-02-15 23:45:15) [GET]
+Rendering template within layouts/application
+Rendering ctf/index
+Completed in 24ms (View: 13, DB: 0) | 200 OK [http://172.21.9.66/]
+
+
+Processing CtfController#index (for 172.21.17.254 at 2009-02-15 23:45:21) [GET]
+Rendering template within layouts/application
+Rendering ctf/index
+Completed in 21ms (View: 13, DB: 0) | 200 OK [http://172.21.9.66/]
+
+
+Processing CtfController#index (for 172.21.17.254 at 2009-02-15 23:45:57) [GET]
+Rendering template within layouts/application
+Rendering ctf/index
+Completed in 23ms (View: 11, DB: 0) | 200 OK [http://172.21.9.66/]
+
+
+Processing CtfController#index (for 172.21.17.254 at 2009-02-15 23:45:58) [GET]
+Rendering template within layouts/application
+Rendering ctf/index
+Completed in 31ms (View: 13, DB: 0) | 200 OK [http://172.21.9.66/]
+
+
+Processing CtfController#index (for 172.21.17.254 at 2009-02-15 23:45:58) [GET]
+Rendering template within layouts/application
+Rendering ctf/index
+Completed in 35ms (View: 18, DB: 0) | 200 OK [http://172.21.9.66/]
+
+
+Processing CtfController#index (for 172.21.17.254 at 2009-02-15 23:46:42) [GET]
+Rendering template within layouts/application
+Rendering ctf/index
+Completed in 18ms (View: 8, DB: 0) | 200 OK [http://172.21.9.66/]
+
+
+Processing CtfController#index (for 172.21.17.254 at 2009-02-15 23:47:13) [GET]
+Rendering template within layouts/application
+Rendering ctf/index
+Completed in 23ms (View: 10, DB: 0) | 200 OK [http://172.21.9.66/]
+
+
+Processing CtfController#index (for 172.21.17.254 at 2009-02-15 23:47:29) [GET]
+Rendering template within layouts/application
+Rendering ctf/index
+Completed in 23ms (View: 9, DB: 0) | 200 OK [http://172.21.9.66/]
+
+
+Processing CtfController#index (for 172.21.17.254 at 2009-02-15 23:47:30) [GET]
+Rendering template within layouts/application
+Rendering ctf/index
+Completed in 23ms (View: 11, DB: 0) | 200 OK [http://172.21.9.66/]
+
+
+Processing CtfController#index (for 172.21.17.254 at 2009-02-15 23:47:52) [GET]
+Rendering template within layouts/application
+Rendering ctf/index
+Completed in 23ms (View: 8, DB: 0) | 200 OK [http://172.21.9.66/]
+
+
+Processing CtfController#index (for 172.21.17.254 at 2009-02-15 23:47:53) [GET]
+Rendering template within layouts/application
+Rendering ctf/index
+Completed in 20ms (View: 9, DB: 0) | 200 OK [http://172.21.9.66/]
+
+
+Processing CtfController#index (for 172.21.17.254 at 2009-02-15 23:47:53) [GET]
+Rendering template within layouts/application
+Rendering ctf/index
+Completed in 25ms (View: 11, DB: 0) | 200 OK [http://172.21.9.66/]
+
+
+Processing CtfController#index (for 172.21.17.254 at 2009-02-15 23:47:53) [GET]
+Rendering template within layouts/application
+Rendering ctf/index
+Completed in 24ms (View: 10, DB: 0) | 200 OK [http://172.21.9.66/]
+
+
+Processing CtfController#index (for 172.21.17.254 at 2009-02-15 23:48:00) [GET]
+Rendering template within layouts/application
+Rendering ctf/index
+Completed in 29ms (View: 11, DB: 0) | 200 OK [http://172.21.9.66/]
+
+
+Processing CtfController#index (for 172.21.17.254 at 2009-02-15 23:48:12) [GET]
+Rendering template within layouts/application
+Rendering ctf/index
+Completed in 21ms (View: 9, DB: 0) | 200 OK [http://172.21.9.66/]
+
+
+Processing CtfController#index (for 172.21.17.254 at 2009-02-15 23:56:49) [GET]
+Rendering template within layouts/application
+Rendering ctf/index
+Completed in 23ms (View: 11, DB: 0) | 200 OK [http://172.21.9.66/]
+
+
+Processing CtfController#index (for 172.21.17.254 at 2009-02-16 00:01:07) [GET]
+Rendering template within layouts/application
+Rendering ctf/index
+Completed in 22ms (View: 10, DB: 0) | 200 OK [http://172.21.9.66/]
+
+
+Processing CtfController#index (for 172.21.17.254 at 2009-02-16 00:01:48) [GET]
+Rendering template within layouts/application
+Rendering ctf/index
+Completed in 26ms (View: 13, DB: 0) | 200 OK [http://172.21.9.66/]
+
+
+Processing CtfController#index (for 172.21.17.254 at 2009-02-16 00:02:17) [GET]
+Rendering template within layouts/application
+Rendering ctf/index
+Completed in 24ms (View: 12, DB: 0) | 200 OK [http://172.21.9.66/]
+
+
+Processing CtfController#index (for 172.21.17.254 at 2009-02-16 00:08:13) [GET]
+Rendering template within layouts/application
+Rendering ctf/index
+Completed in 20ms (View: 7, DB: 0) | 200 OK [http://172.21.9.66/]
+
+
+Processing CtfController#index (for 172.21.17.254 at 2009-02-16 00:08:28) [GET]
+Rendering template within layouts/application
+Rendering ctf/index
+Completed in 16ms (View: 7, DB: 0) | 200 OK [http://172.21.9.66/]
+
+
+Processing CtfController#index (for 172.21.17.254 at 2009-02-16 00:08:39) [GET]
+Rendering template within layouts/application
+Rendering ctf/index
+Completed in 23ms (View: 10, DB: 0) | 200 OK [http://172.21.9.66/]
+
+
+Processing CtfController#index (for 172.21.17.254 at 2009-02-16 00:08:45) [GET]
+Rendering template within layouts/application
+Rendering ctf/index
+Completed in 19ms (View: 11, DB: 0) | 200 OK [http://172.21.9.66/]
+
+
+Processing CtfController#index (for 172.21.17.254 at 2009-02-16 00:08:57) [GET]
+Rendering template within layouts/application
+Rendering ctf/index
+Completed in 21ms (View: 11, DB: 0) | 200 OK [http://172.21.9.66/]
+
+
+Processing CtfController#index (for 172.21.17.254 at 2009-02-16 00:09:10) [GET]
+Rendering template within layouts/application
+Rendering ctf/index
+Completed in 20ms (View: 7, DB: 0) | 200 OK [http://172.21.9.66/]
+
+
+Processing CtfController#index (for 172.21.17.254 at 2009-02-16 00:09:25) [GET]
+Rendering template within layouts/application
+Rendering ctf/index
+Completed in 22ms (View: 9, DB: 0) | 200 OK [http://172.21.9.66/]
+
+
+Processing CtfController#index (for 172.21.17.254 at 2009-02-16 00:09:26) [GET]
+Rendering template within layouts/application
+Rendering ctf/index
+Completed in 22ms (View: 12, DB: 0) | 200 OK [http://172.21.9.66/]
+
+
+Processing CtfController#index (for 172.21.17.254 at 2009-02-16 00:09:32) [GET]
+Rendering template within layouts/application
+Rendering ctf/index
+Completed in 24ms (View: 14, DB: 0) | 200 OK [http://172.21.9.66/]
+
+
+Processing CtfController#index (for 172.21.17.254 at 2009-02-16 00:09:33) [GET]
+Rendering template within layouts/application
+Rendering ctf/index
+Completed in 27ms (View: 14, DB: 0) | 200 OK [http://172.21.9.66/]
+
+
+Processing CtfController#index (for 172.21.17.254 at 2009-02-16 00:09:58) [GET]
+Rendering template within layouts/application
+Rendering ctf/index
+Completed in 23ms (View: 12, DB: 0) | 200 OK [http://172.21.9.66/]
+
+
+Processing CtfController#index (for 172.21.17.254 at 2009-02-16 00:10:12) [GET]
+Rendering template within layouts/application
+Rendering ctf/index
+Completed in 26ms (View: 13, DB: 0) | 200 OK [http://172.21.9.66/]
+
+
+Processing CtfController#index (for 172.21.17.254 at 2009-02-16 00:10:34) [GET]
+Rendering template within layouts/application
+Rendering ctf/index
+Completed in 30ms (View: 12, DB: 0) | 200 OK [http://172.21.9.66/]
+
+
+Processing CtfController#index (for 172.21.17.254 at 2009-02-16 00:10:40) [GET]
+Rendering template within layouts/application
+Rendering ctf/index
+Completed in 20ms (View: 9, DB: 0) | 200 OK [http://172.21.9.66/]
+
+
+Processing CtfController#index (for 172.21.17.254 at 2009-02-16 00:10:59) [GET]
+Rendering template within layouts/application
+Rendering ctf/index
+Completed in 24ms (View: 13, DB: 0) | 200 OK [http://172.21.9.66/]
+
+
+Processing CtfController#index (for 172.21.17.254 at 2009-02-16 00:11:28) [GET]
+Rendering template within layouts/application
+Rendering ctf/index
+Completed in 34ms (View: 12, DB: 0) | 200 OK [http://172.21.9.66/]
+
+
+Processing CtfController#index (for 172.21.17.254 at 2009-02-16 00:11:45) [GET]
+Rendering template within layouts/application
+Rendering ctf/index
+Completed in 24ms (View: 12, DB: 0) | 200 OK [http://172.21.9.66/]
+
+
+Processing CtfController#index (for 172.21.17.254 at 2009-02-16 00:11:46) [GET]
+Rendering template within layouts/application
+Rendering ctf/index
+Completed in 29ms (View: 12, DB: 0) | 200 OK [http://172.21.9.66/]
+
+
+Processing CtfController#index (for 172.21.17.254 at 2009-02-16 00:11:49) [GET]
+Rendering template within layouts/application
+Rendering ctf/index
+Completed in 23ms (View: 13, DB: 0) | 200 OK [http://172.21.9.66/]
+
+
+Processing CtfController#index (for 172.21.17.254 at 2009-02-16 00:11:54) [GET]
+Rendering template within layouts/application
+Rendering ctf/index
+Completed in 31ms (View: 14, DB: 0) | 200 OK [http://172.21.9.66/]
+
+
+Processing CtfController#index (for 172.21.17.254 at 2009-02-16 00:12:04) [GET]
+Rendering template within layouts/application
+Rendering ctf/index
+Completed in 26ms (View: 10, DB: 0) | 200 OK [http://172.21.9.66/]
+
+
+Processing CtfController#index (for 172.21.17.254 at 2009-02-16 00:13:30) [GET]
+Rendering template within layouts/application
+Rendering ctf/index
+Completed in 24ms (View: 11, DB: 0) | 200 OK [http://172.21.9.66/]
+
+
+Processing CtfController#index (for 172.21.17.254 at 2009-02-16 00:13:31) [GET]
+Rendering template within layouts/application
+Rendering ctf/index
+Completed in 26ms (View: 12, DB: 0) | 200 OK [http://172.21.9.66/]
+
+
+Processing CtfController#index (for 172.21.17.254 at 2009-02-16 00:13:53) [GET]
+Rendering template within layouts/application
+Rendering ctf/index
+Completed in 26ms (View: 11, DB: 0) | 200 OK [http://172.21.9.66/]
+
+
+Processing CtfController#index (for 172.21.17.254 at 2009-02-16 00:13:54) [GET]
+Rendering template within layouts/application
+Rendering ctf/index
+Completed in 24ms (View: 10, DB: 0) | 200 OK [http://172.21.9.66/]
+
+
+Processing CtfController#index (for 172.21.17.254 at 2009-02-16 00:14:15) [GET]
+Rendering template within layouts/application
+Rendering ctf/index
+Completed in 29ms (View: 12, DB: 0) | 200 OK [http://172.21.9.66/]
+
+
+Processing CtfController#index (for 172.21.17.254 at 2009-02-16 00:14:56) [GET]
+Rendering template within layouts/application
+Rendering ctf/index
+Completed in 32ms (View: 19, DB: 0) | 200 OK [http://172.21.9.66/]
+
+
+Processing CtfController#index (for 172.21.17.254 at 2009-02-16 00:15:15) [GET]
+Rendering template within layouts/application
+Rendering ctf/index
+Completed in 24ms (View: 8, DB: 0) | 200 OK [http://172.21.9.66/]
+
+
+Processing CtfController#index (for 172.21.17.254 at 2009-02-16 00:21:05) [GET]
+Rendering template within layouts/application
+Rendering ctf/index
+Completed in 26ms (View: 13, DB: 0) | 200 OK [http://172.21.9.66/]
+
+
+Processing CtfController#index (for 172.21.17.254 at 2009-02-16 00:21:26) [GET]
+Rendering template within layouts/application
+Rendering ctf/index
+Completed in 20ms (View: 12, DB: 0) | 200 OK [http://172.21.9.66/]
+
+
+Processing CtfController#index (for 172.21.17.254 at 2009-02-16 00:21:27) [GET]
+Rendering template within layouts/application
+Rendering ctf/index
+Completed in 21ms (View: 12, DB: 0) | 200 OK [http://172.21.9.66/]
+
+
+Processing CtfController#index (for 172.21.17.254 at 2009-02-16 00:21:48) [GET]
+Rendering template within layouts/application
+Rendering ctf/index
+Completed in 20ms (View: 10, DB: 0) | 200 OK [http://172.21.9.66/]
+
+
+Processing CtfController#index (for 172.21.17.254 at 2009-02-16 00:22:52) [GET]
+Rendering template within layouts/application
+Rendering ctf/index
+Completed in 138ms (View: 11, DB: 0) | 200 OK [http://172.21.9.66/]
+
+
+Processing CtfController#index (for 172.21.17.254 at 2009-02-16 00:22:52) [GET]
+Rendering template within layouts/application
+Rendering ctf/index
+Completed in 24ms (View: 14, DB: 0) | 200 OK [http://172.21.9.66/]
+
+
+Processing CtfController#index (for 172.21.17.254 at 2009-02-16 00:23:10) [GET]
+Rendering template within layouts/application
+Rendering ctf/index
+Completed in 22ms (View: 9, DB: 0) | 200 OK [http://172.21.9.66/]
+
+
+Processing CtfController#index (for 172.21.17.254 at 2009-02-16 00:23:10) [GET]
+Rendering template within layouts/application
+Rendering ctf/index
+Completed in 26ms (View: 10, DB: 0) | 200 OK [http://172.21.9.66/]
+
+
+Processing CtfController#index (for 172.21.17.254 at 2009-02-16 00:23:48) [GET]
+Rendering template within layouts/application
+Rendering ctf/index
+Completed in 28ms (View: 12, DB: 0) | 200 OK [http://172.21.9.66/]
+
+
+Processing CtfController#index (for 172.21.17.254 at 2009-02-16 00:24:03) [GET]
+Rendering template within layouts/application
+Rendering ctf/index
+Completed in 19ms (View: 11, DB: 0) | 200 OK [http://172.21.9.66/]
+
+
+Processing CtfController#index (for 172.21.17.254 at 2009-02-16 00:24:11) [GET]
+Rendering template within layouts/application
+Rendering ctf/index
+Completed in 23ms (View: 10, DB: 0) | 200 OK [http://172.21.9.66/]
+
+
+Processing CtfController#index (for 172.21.17.254 at 2009-02-16 00:24:34) [GET]
+Rendering template within layouts/application
+Rendering ctf/index
+Completed in 28ms (View: 11, DB: 0) | 200 OK [http://172.21.9.66/]
+
+
+Processing CtfController#index (for 172.21.17.254 at 2009-02-16 00:24:48) [GET]
+Rendering template within layouts/application
+Rendering ctf/index
+Completed in 21ms (View: 8, DB: 0) | 200 OK [http://172.21.9.66/]
+
+
+Processing CtfController#index (for 172.21.17.254 at 2009-02-16 00:24:53) [GET]
+Rendering template within layouts/application
+Rendering ctf/index
+Completed in 25ms (View: 9, DB: 0) | 200 OK [http://172.21.9.66/]
+
+
+Processing CtfController#index (for 172.21.17.254 at 2009-02-16 00:25:04) [GET]
+Rendering template within layouts/application
+Rendering ctf/index
+Completed in 35ms (View: 14, DB: 0) | 200 OK [http://172.21.9.66/]
+
+
+Processing CtfController#index (for 172.21.17.254 at 2009-02-16 00:25:13) [GET]
+Rendering template within layouts/application
+Rendering ctf/index
+Completed in 25ms (View: 10, DB: 0) | 200 OK [http://172.21.9.66/]
+
+
+Processing CtfController#index (for 172.21.17.254 at 2009-02-16 00:25:14) [GET]
+Rendering template within layouts/application
+Rendering ctf/index
+Completed in 27ms (View: 18, DB: 0) | 200 OK [http://172.21.9.66/]
+
+
+Processing CtfController#index (for 172.21.17.254 at 2009-02-16 00:25:22) [GET]
+Rendering template within layouts/application
+Rendering ctf/index
+Completed in 30ms (View: 12, DB: 0) | 200 OK [http://172.21.9.66/]
+
+
+Processing CtfController#index (for 172.21.17.254 at 2009-02-16 00:25:31) [GET]
+Rendering template within layouts/application
+Rendering ctf/index
+Completed in 30ms (View: 10, DB: 0) | 200 OK [http://172.21.9.66/]
+
+
+Processing CtfController#index (for 172.21.17.254 at 2009-02-16 00:26:22) [GET]
+Rendering template within layouts/application
+Rendering ctf/index
+Completed in 23ms (View: 12, DB: 0) | 200 OK [http://172.21.9.66/]
+
+
+Processing CtfController#index (for 172.21.17.254 at 2009-02-16 00:26:28) [GET]
+Rendering template within layouts/application
+Rendering ctf/index
+Completed in 24ms (View: 14, DB: 0) | 200 OK [http://172.21.9.66/]
+
+
+Processing CtfController#index (for 172.21.17.254 at 2009-02-16 00:26:40) [GET]
+Rendering template within layouts/application
+Rendering ctf/index
+Completed in 23ms (View: 9, DB: 0) | 200 OK [http://172.21.9.66/]
+
+
+Processing CtfController#index (for 172.21.17.254 at 2009-02-16 00:27:27) [GET]
+Rendering template within layouts/application
+Rendering ctf/index
+Completed in 34ms (View: 17, DB: 0) | 200 OK [http://172.21.9.66/]
+
+
+Processing CtfController#index (for 172.21.17.254 at 2009-02-16 00:27:31) [GET]
+Rendering template within layouts/application
+Rendering ctf/index
+Completed in 24ms (View: 13, DB: 0) | 200 OK [http://172.21.9.66/]
+
+
+Processing CtfController#index (for 172.21.17.254 at 2009-02-16 00:27:44) [GET]
+Rendering template within layouts/application
+Rendering ctf/index
+Completed in 29ms (View: 16, DB: 0) | 200 OK [http://172.21.9.66/]
+
+
+Processing CtfController#index (for 172.21.17.254 at 2009-02-16 00:27:44) [GET]
+Rendering template within layouts/application
+Rendering ctf/index
+Completed in 26ms (View: 12, DB: 0) | 200 OK [http://172.21.9.66/]
+
+
+Processing CtfController#index (for 172.21.17.254 at 2009-02-16 00:27:50) [GET]
+Rendering template within layouts/application
+Rendering ctf/index
+Completed in 31ms (View: 18, DB: 0) | 200 OK [http://172.21.9.66/]
+
+
+Processing CtfController#index (for 172.21.17.254 at 2009-02-16 00:32:11) [GET]
+Rendering template within layouts/application
+Rendering ctf/index
+Completed in 30ms (View: 17, DB: 0) | 200 OK [http://172.21.9.66/]
+
+
+Processing CtfController#index (for 172.21.17.254 at 2009-02-16 00:32:40) [GET]
+Rendering template within layouts/application
+Rendering ctf/index
+Completed in 27ms (View: 13, DB: 0) | 200 OK [http://172.21.9.66/]
+
+
+Processing CtfController#index (for 172.21.17.254 at 2009-02-16 00:33:15) [GET]
+Rendering template within layouts/application
+Rendering ctf/index
+Completed in 25ms (View: 14, DB: 0) | 200 OK [http://172.21.9.66/]
+
+
+Processing CtfController#index (for 172.21.17.254 at 2009-02-16 00:33:15) [GET]
+Rendering template within layouts/application
+Rendering ctf/index
+Completed in 22ms (View: 8, DB: 0) | 200 OK [http://172.21.9.66/]
+
+
+Processing CtfController#index (for 172.21.17.254 at 2009-02-16 00:34:26) [GET]
+Rendering template within layouts/application
+Rendering ctf/index
+Completed in 25ms (View: 11, DB: 0) | 200 OK [http://172.21.9.66/]
+
+
+Processing CtfController#index (for 172.21.17.254 at 2009-02-16 00:36:43) [GET]
+Rendering template within layouts/application
+Rendering ctf/index
+Completed in 27ms (View: 10, DB: 0) | 200 OK [http://172.21.9.66/]
+
+
+Processing CtfController#index (for 172.21.17.254 at 2009-02-16 00:36:58) [GET]
+Rendering template within layouts/application
+Rendering ctf/index
+Completed in 22ms (View: 13, DB: 0) | 200 OK [http://172.21.9.66/]
+
+
+Processing CtfController#index (for 172.21.17.254 at 2009-02-16 00:37:12) [GET]
+Rendering template within layouts/application
+Rendering ctf/index
+Completed in 17ms (View: 8, DB: 0) | 200 OK [http://172.21.9.66/]
+
+
+Processing CtfController#index (for 172.21.17.254 at 2009-02-16 00:37:25) [GET]
+Rendering template within layouts/application
+Rendering ctf/index
+Completed in 24ms (View: 11, DB: 0) | 200 OK [http://172.21.9.66/]
+
+
+Processing CtfController#index (for 172.21.17.254 at 2009-02-16 00:37:35) [GET]
+Rendering template within layouts/application
+Rendering ctf/index
+Completed in 20ms (View: 9, DB: 0) | 200 OK [http://172.21.9.66/]
+
+
+Processing CtfController#index (for 172.21.17.254 at 2009-02-16 00:38:10) [GET]
+Rendering template within layouts/application
+Rendering ctf/index
+Completed in 27ms (View: 15, DB: 0) | 200 OK [http://172.21.9.66/]
+
+
+Processing CtfController#index (for 172.21.17.254 at 2009-02-16 00:38:16) [GET]
+Rendering template within layouts/application
+Rendering ctf/index
+Completed in 20ms (View: 10, DB: 0) | 200 OK [http://172.21.9.66/]
+
+
+Processing CtfController#index (for 172.21.17.254 at 2009-02-16 00:38:27) [GET]
+Rendering template within layouts/application
+Rendering ctf/index
+Completed in 24ms (View: 10, DB: 0) | 200 OK [http://172.21.9.66/]
+
+
+Processing CtfController#index (for 172.21.17.254 at 2009-02-16 00:38:34) [GET]
+Rendering template within layouts/application
+Rendering ctf/index
+Completed in 22ms (View: 12, DB: 0) | 200 OK [http://172.21.9.66/]
+
+
+Processing CtfController#index (for 172.21.17.254 at 2009-02-16 00:40:31) [GET]
+Rendering template within layouts/application
+Rendering ctf/index
+Completed in 28ms (View: 18, DB: 0) | 200 OK [http://172.21.9.66/]
+
+
+Processing CtfController#index (for 172.21.17.254 at 2009-02-16 00:40:37) [GET]
+Rendering template within layouts/application
+Rendering ctf/index
+Completed in 18ms (View: 8, DB: 0) | 200 OK [http://172.21.9.66/]
+
+
+Processing CtfController#index (for 172.21.17.254 at 2009-02-16 00:40:53) [GET]
+Rendering template within layouts/application
+Rendering ctf/index
+Completed in 24ms (View: 12, DB: 0) | 200 OK [http://172.21.9.66/]
+
+
+Processing CtfController#index (for 172.21.17.254 at 2009-02-16 00:40:53) [GET]
+Rendering template within layouts/application
+Rendering ctf/index
+Completed in 23ms (View: 10, DB: 0) | 200 OK [http://172.21.9.66/]
+
+
+Processing CtfController#index (for 172.21.17.254 at 2009-02-16 00:41:24) [GET]
+Rendering template within layouts/application
+Rendering ctf/index
+Completed in 27ms (View: 12, DB: 0) | 200 OK [http://172.21.9.66/]
+
+
+Processing CtfController#index (for 172.21.17.254 at 2009-02-16 00:41:35) [GET]
+Rendering template within layouts/application
+Rendering ctf/index
+Completed in 21ms (View: 11, DB: 0) | 200 OK [http://172.21.9.66/]
+
+
+Processing CtfController#index (for 172.21.17.254 at 2009-02-16 00:41:36) [GET]
+Rendering template within layouts/application
+Rendering ctf/index
+Completed in 17ms (View: 9, DB: 0) | 200 OK [http://172.21.9.66/]
+
+
+Processing CtfController#index (for 172.21.17.254 at 2009-02-16 00:41:36) [GET]
+Rendering template within layouts/application
+Rendering ctf/index
+Completed in 24ms (View: 12, DB: 0) | 200 OK [http://172.21.9.66/]
+
+
+Processing CtfController#index (for 172.21.17.254 at 2009-02-16 00:41:40) [GET]
+Rendering template within layouts/application
+Rendering ctf/index
+Completed in 18ms (View: 10, DB: 0) | 200 OK [http://172.21.9.66/]
+
+
+Processing CtfController#index (for 172.21.17.254 at 2009-02-16 00:42:23) [GET]
+Rendering template within layouts/application
+Rendering ctf/index
+Completed in 17ms (View: 9, DB: 0) | 200 OK [http://172.21.9.66/]
+
+
+Processing CtfController#index (for 172.21.17.254 at 2009-02-16 00:43:32) [GET]
+Rendering template within layouts/application
+Rendering ctf/index
+Completed in 18ms (View: 10, DB: 0) | 200 OK [http://172.21.9.66/]
+
+
+Processing CtfController#index (for 172.21.17.254 at 2009-02-16 00:43:40) [GET]
+Rendering template within layouts/application
+Rendering ctf/index
+Completed in 20ms (View: 8, DB: 0) | 200 OK [http://172.21.9.66/]
+
+
+Processing CtfController#index (for 172.21.17.254 at 2009-02-16 00:44:10) [GET]
+Rendering template within layouts/application
+Rendering ctf/index
+Completed in 19ms (View: 11, DB: 0) | 200 OK [http://172.21.9.66/]
+
+
+Processing CtfController#index (for 172.21.17.254 at 2009-02-16 00:44:19) [GET]
+Rendering template within layouts/application
+Rendering ctf/index
+Completed in 17ms (View: 10, DB: 0) | 200 OK [http://172.21.9.66/]

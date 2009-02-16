@@ -7,7 +7,19 @@
   </head>
 
   <body>
-  	<%= yield %>
-	</body>
+    <center>
+      <div id="head">
+         <div id="ucon_logo"> <%= image_tag("logo_ucon.jpg", :height => "120px" , :width => "275px") %> </div>
+	 <div id= "letters_head"><b> <font color="#F80000"><b>CAPTURE THE FLAG</b></font> - uCon Security Conference <br> February 2009 Recife Brazil </b></div>
+	 <div id="bug_logo"> <%= image_tag("bug.jpg", :height => "170px", :width => "163px") %> </div>
+      </div>
+      <div id="container">
+        <%= yield %>
+      </div>
+      <div id="footer"> <br><b>uCon Security Conference - February 2009 - Recife Brazil</b> </div>
+    </center>
+
+
+  </body>
 </html>
 

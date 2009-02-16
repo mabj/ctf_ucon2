@@ -8,29 +8,30 @@ body {
 
 #head {
 	width: 800px;
-	height: 200px;
-	background-color: #000000;
-	color: #ffffff;
-	border: 1px;
-	text-align: left;
+	height: 170px;
+	background-color: #FFFFFF;
+	color: #000000;
+	border: 1px solid #959596;
+	font-size: 11px;
 }
 
 #container {
 	width: 800px;
-	height: 545px;
-	background-color: #DDDDDD;
+	height: 500px;
+	background-color: #FFFFFF;
 	color: #000000;
 	margin-top: 5px;
-	text-align:left;
+	text-align: left;
 }
 
 #menu {
 	display: block;
 	position: relative;
 	float: left;
-	width: 200px;
-	height: 495px;
-	background: #AAAAAA;
+	border: 1px solid #959596;
+	width: 198px;
+	height: 493px;
+	background: #FFFFFF;
 }
 
 #content {
@@ -38,18 +39,48 @@ body {
 	position: relative;
 	float: left;
 	margin-left: 5px;
-	width: 595px;
-	height: 495px;
-	background: #888888;
+	border: 1px solid #959596;
+	width: 593px;
+	height: 493px;
+	background: #FFFFFF;
 }
 
 #footer {
-	display: block;
-	position: relative;
-	float: left;
-	color: #FFFFFF;
+	color: #000000;
 	height: 50px;
 	width: 800px;
-	background: #000000;	
+	background: #FFFFFF;
+	border: 1px solid #959596;
+	font-size: 12px;
 }
 
+#ucon_logo {
+	margin-top: 25px;
+	position: relative;
+	display: block;
+	background-color: #FFFFFF;
+	float: left;
+	width: 275px;
+	height: 145px;
+}
+
+#bug_logo {
+	margin-top: 0px;
+	background-color: #FFFFFF;
+	position: relative;
+	display: block;
+	float: right;
+	width: 163px;
+	height: 170px;
+}
+
+#letters_head {
+	margin-top: 90px;
+	width: 362px;
+	height: 80px;
+	background-color: #FFFFFF;
+	float: left;
+	text-align: center;
+	display: block;
+	position:relative;
+}
