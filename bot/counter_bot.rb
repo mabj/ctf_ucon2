@@ -47,11 +47,11 @@ class CTFBot
   end
 
   def __register_user_point(challenge_id = 0, user_name = '')
-    rows = @dbh.execute('select user_id, challenge_id from user_challenges where user_id IN (select id from users where name = ?) AND challenge_id = ?', user_name, challenge_id)
+    rows = @dbh.execute('select user_id, challenge_id from challenges_users where user_id IN (select id from users where name = ?) AND challenge_id = ?', user_name, challenge_id)
     if rows.size.zero?
       @logger.info("Mark a point to user: #{user_name}")
       rows = @dbh.execute("select id from users where name = ?", user_name)
-      @dbh.execute('insert into user_challenges values (?, ?)',rows[0][0], challenge_id)
+      @dbh.execute('insert into challenges_users values (?, ?)',rows[0][0], challenge_id)
     end
   end
 

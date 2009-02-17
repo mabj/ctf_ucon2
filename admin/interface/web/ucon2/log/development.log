@@ -2974,3 +2974,138 @@ Migrating to CreateUsersChallenges (20090217171959)
   [4;36;1mSQL (0.4ms)[0m   [0;1mPRAGMA index_list("users_challenges")[0m
   [4;35;1mSQL (0.3ms)[0m   [0mPRAGMA index_info('index_users_challenges_on_user_id')[0m
   [4;36;1mSQL (0.4ms)[0m   [0;1mPRAGMA index_info('index_users_challenges_on_challenge_id_and_user_id')[0m
+  [4;36;1mSQL (1.9ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" [0m
+  [4;36;1mSQL (1.9ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsersChallenges (20090217171959)
+  [4;36;1mSQL (21.8ms)[0m   [0;1mDROP TABLE "users_challenges"[0m
+  [4;35;1mSQL (4.9ms)[0m   [0mDELETE FROM schema_migrations WHERE version = '20090217171959'[0m
+Migrating to CreateChallenges (20090217171955)
+  [4;36;1mSQL (7.4ms)[0m   [0;1mDROP TABLE "challenges"[0m
+  [4;35;1mSQL (2.3ms)[0m   [0mDELETE FROM schema_migrations WHERE version = '20090217171955'[0m
+Migrating to CreateUsers (20090217171938)
+  [4;36;1mSQL (5.3ms)[0m   [0;1mDROP TABLE "users"[0m
+  [4;35;1mSQL (7.6ms)[0m   [0mDELETE FROM schema_migrations WHERE version = '20090217171938'[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20090217171938)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20090217171938)
+  [4;36;1mSQL (0.5ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (5.9ms)[0m   [0mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "mail" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (13.5ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090217171938')[0m
+Migrating to CreateChallenges (20090217171955)
+  [4;35;1mSQL (12.0ms)[0m   [0mCREATE TABLE "challenges" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "level" integer, "score" integer, "uid" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (5.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090217171955')[0m
+Migrating to CreateUsersChallenges (20090217171959)
+  [4;35;1mSQL (8.0ms)[0m   [0mCREATE TABLE "users_challenges" ("user_id" integer, "challenge_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (6.6ms)[0m   [0;1mCREATE INDEX "index_users_challenges_on_challenge_id_and_user_id" ON "users_challenges" ("challenge_id", "user_id")[0m
+  [4;35;1mSQL (5.2ms)[0m   [0mCREATE INDEX "index_users_challenges_on_user_id" ON "users_challenges" ("user_id")[0m
+  [4;36;1mSQL (6.2ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090217171959')[0m
+  [4;35;1mSQL (0.7ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.6ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("challenges")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mPRAGMA index_list("users_challenges")[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mPRAGMA index_info('index_users_challenges_on_user_id')[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mPRAGMA index_info('index_users_challenges_on_challenge_id_and_user_id')[0m
+  [4;36;1mUser Load (0.8ms)[0m   [0;1mSELECT * FROM "users" [0m
+  [4;35;1mUser Create (0.5ms)[0m   [0mINSERT INTO "users" ("name", "created_at", "updated_at", "mail") VALUES('lhebs', '2009-02-17 19:55:12', '2009-02-17 19:55:12', 'adsd@dadsadsa')[0m
+  [4;36;1mUser Load (1.1ms)[0m   [0;1mSELECT * FROM "users" LIMIT 1[0m
+  [4;35;1mChallenge Create (0.5ms)[0m   [0mINSERT INTO "challenges" ("name", "created_at", "updated_at", "level", "uid", "score") VALUES('dasdsa', '2009-02-17 19:57:03', '2009-02-17 19:57:03', 1, 1, 1)[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (5.9ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (7.9ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20090217171938)
+  [4;36;1mSQL (25.6ms)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "mail" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (14.9ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090217171938')[0m
+Migrating to CreateChallenges (20090217171955)
+  [4;36;1mSQL (7.0ms)[0m   [0;1mCREATE TABLE "challenges" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "level" integer, "score" integer, "uid" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (4.6ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090217171955')[0m
+Migrating to CreateUsersChallenges (20090217171959)
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (6.6ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (11.9ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20090217171938)
+  [4;36;1mSQL (9.3ms)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "mail" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (23.6ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090217171938')[0m
+Migrating to CreateChallenges (20090217171955)
+  [4;36;1mSQL (11.9ms)[0m   [0;1mCREATE TABLE "challenges" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "level" integer, "score" integer, "uid" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (6.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090217171955')[0m
+Migrating to CreateChallengesUsers (20090217171959)
+  [4;36;1mSQL (6.6ms)[0m   [0;1mCREATE TABLE "challenges_users" ("user_id" integer, "challenge_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (7.2ms)[0m   [0mCREATE INDEX "index_challenges_users_on_challenge_id_and_user_id" ON "challenges_users" ("challenge_id", "user_id")[0m
+  [4;36;1mSQL (18.8ms)[0m   [0;1mCREATE INDEX "index_challenges_users_on_user_id" ON "challenges_users" ("user_id")[0m
+  [4;35;1mSQL (4.7ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090217171959')[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("challenges")[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mPRAGMA index_list("challenges_users")[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mPRAGMA index_info('index_challenges_users_on_user_id')[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mPRAGMA index_info('index_challenges_users_on_challenge_id_and_user_id')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mUser Load (0.8ms)[0m   [0;1mSELECT * FROM "users" [0m
+  [4;35;1mUser Create (0.5ms)[0m   [0mINSERT INTO "users" ("name", "created_at", "updated_at", "mail") VALUES('marcos alvares', '2009-02-17 20:00:26', '2009-02-17 20:00:26', 'marcos@tempest.com.br')[0m
+  [4;36;1mChallenge Load (0.4ms)[0m   [0;1mSELECT * FROM "challenges" INNER JOIN "challenges_users" ON "challenges".id = "challenges_users".challenge_id WHERE ("challenges_users".user_id = 1 ) [0m
