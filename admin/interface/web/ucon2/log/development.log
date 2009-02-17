@@ -2903,3 +2903,74 @@ Processing CtfController#about (for 172.21.17.254 at 2009-02-16 01:16:23) [POST]
   Parameters: {"authenticity_token"=>"630d007a88fa2ad5120d1bb1ff08debed709719a"}
 Rendering ctf/about
 Completed in 14ms (View: 7, DB: 0) | 200 OK [http://172.21.9.66/ctf/about]
+
+
+Processing CtfController#index (for 127.0.0.1 at 2009-02-17 12:04:36) [GET]
+Rendering template within layouts/application
+Rendering ctf/index
+Rendered ctf/_menu (2.7ms)
+Completed in 34ms (View: 14, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing CtfController#score (for 127.0.0.1 at 2009-02-17 12:04:39) [POST]
+  Parameters: {"authenticity_token"=>"c67416443d0165cd48bcf7da1aa882a051cc80e5"}
+Rendering ctf/score
+Completed in 5ms (View: 2, DB: 0) | 200 OK [http://localhost/ctf/score]
+
+
+Processing CtfController#log (for 127.0.0.1 at 2009-02-17 12:04:39) [POST]
+  Parameters: {"authenticity_token"=>"c67416443d0165cd48bcf7da1aa882a051cc80e5"}
+Rendering ctf/log
+Completed in 6ms (View: 2, DB: 0) | 200 OK [http://localhost/ctf/log]
+
+
+Processing CtfController#about (for 127.0.0.1 at 2009-02-17 12:04:40) [POST]
+  Parameters: {"authenticity_token"=>"c67416443d0165cd48bcf7da1aa882a051cc80e5"}
+Rendering ctf/about
+Completed in 5ms (View: 2, DB: 0) | 200 OK [http://localhost/ctf/about]
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (9.5ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (8.0ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20090217171938)
+  [4;36;1mSQL (9.4ms)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (5.8ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090217171938')[0m
+Migrating to CreateChallenges (20090217171955)
+  [4;36;1mSQL (14.2ms)[0m   [0;1mCREATE TABLE "challenges" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (6.5ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090217171955')[0m
+Migrating to CreateUsersChallenges (20090217171959)
+  [4;36;1mSQL (1.1ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20090217171938)
+Migrating to CreateChallenges (20090217171955)
+Migrating to CreateUsersChallenges (20090217171959)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (9.6ms)[0m   [0mCREATE TABLE "users_challenges" ("user_id" integer, "challenge_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (7.3ms)[0m   [0;1mCREATE INDEX "index_users_challenges_on_challenge_id_and_user_id" ON "users_challenges" ("challenge_id", "user_id")[0m
+  [4;35;1mSQL (7.1ms)[0m   [0mCREATE INDEX "index_users_challenges_on_user_id" ON "users_challenges" ("user_id")[0m
+  [4;36;1mSQL (3.9ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090217171959')[0m
+  [4;35;1mSQL (0.7ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.7ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("challenges")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mPRAGMA index_list("users_challenges")[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mPRAGMA index_info('index_users_challenges_on_user_id')[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mPRAGMA index_info('index_users_challenges_on_challenge_id_and_user_id')[0m
