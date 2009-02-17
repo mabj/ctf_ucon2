@@ -12,7 +12,7 @@ CREATE TABLE challenges (
   uid INTEGER
 );
 
-CREATE TABLE users_challenges (
+CREATE TABLE challenges_users (
   user_id INTEGER NOT NULL,
   challenge_id INTEGER NOT NULL
 );
