@@ -42,7 +42,7 @@ class CTFBot
     rows = @dbh.execute('select name, mail from users where name = ?', user_name)
     if rows.size.zero?
       @logger.info("Creating new user [#{user_name}]")
-      @dbh.execute('insert into users values (NULL, ?, "automatic@mail")', user_name)
+      @dbh.execute('insert into users values (NULL, ?, "automatic@mail", "","")', user_name)
     end
   end
 
@@ -51,7 +51,7 @@ class CTFBot
     if rows.size.zero?
       @logger.info("Mark a point to user: #{user_name}")
       rows = @dbh.execute("select id from users where name = ?", user_name)
-      @dbh.execute('insert into challenges_users values (?, ?)',rows[0][0], challenge_id)
+      @dbh.execute('insert into challenges_users values (?, ?, "", "")',rows[0][0], challenge_id)
     end
   end
 

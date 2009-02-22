@@ -39,8 +39,8 @@ loop do
       @logger.info("[+] O sistema possui [#{@user_counter}] clientes conectados")
       loop do
         begin
-          @score = @dbh.execute('select users.name, sum(challenges.score) as total from users, user_challenges, challenges where users.id = user_challenges.user_id AND challenges.uid = user_challenges.challenge_id group by users.name order by total desc;')
-          users_without_score = @dbh.execute('select name, "0" from users where id NOT IN (select user_id from user_challenges group by user_id)')
+          @score = @dbh.execute('select users.name, sum(challenges.score) as total from users, challenges_users, challenges where users.id = challenges_users.user_id AND challenges.uid = challenges_users.challenge_id group by users.name order by total desc;')
+          users_without_score = @dbh.execute('select name, "0" from users where id NOT IN (select user_id from challenges_users group by user_id)')
 
           @score += users_without_score
           socket.puts @erb.result(binding)
