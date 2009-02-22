@@ -1,5 +1,3 @@
-<ul>
-	<li> &nbsp;&nbsp;<%= link_to_remote "Score Table", :update => "content", :url => { :action => "score" } %> </li>
-	<li> &nbsp;&nbsp;<%= link_to_remote "System Log", :update => "content", :url => { :action => "log" } %>  </li>
-	<li> &nbsp;&nbsp;<%= link_to_remote "Score About", :update => "content", :url => { :action => "about" } %>  </li>
-</ul>
+<%= link_to_remote "Score Table", :update => "content", :url => { :action => "score" } %>
+<%= link_to_remote "System Log", :update => "content", :url => { :action => "log" } %>
+<%= link_to_remote "About", :update => "content", :url => { :action => "about" } %>

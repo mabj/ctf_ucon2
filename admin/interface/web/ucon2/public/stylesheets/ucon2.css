@@ -25,49 +25,38 @@ body {
 	text-align: left;
 }
 
+
 #menu {
-	display: block;
-	position: relative;
-	float: left;
-	border: 1px solid #959596;
-	width: 198px;
-	height: 493px;
-	background: #FFFFFF;
-	font-size: 14px;
-	font-weight: bold;
-	text-align: center;
-	padding: 0;
-	margin: 0;
+        display: block;
+        position: relative;
+        float: left;
+        border: 1px solid #959596;
+        width: 198px;
+        height: 493px;
+        background: #FFFFFF;
+        font-size: 14px;
+        font-weight: bold;
+        text-align: center;
+        padding: 0;
+        margin: 0;
 }
 
-#menu ul {
-	list-style: none;
-	margin: 0;
-	padding: 0;
+#menu a {
+        font: bold 13px Verdana;
+        display: block;
+        margin-top: 4px;
+        margin-bottom: 4px;
+        width: 196px;
+        background-color: #000000;
+        color: #FFFFFF;
+        text-decoration: none;
+        border: 1px solid #959596;
 }
 
-#menu li {
-	margin: 2px;
-	list-style-type: none;
-	background: #000000;
-	color: #FFFFFF;
-}
-
-
-#menu li:hover {
-	background: #FFFFFF;
-	color: #000000;
-}
-
-#menu li a {
-	font-weight:bold;
-	text-decoration: none;
-	color: #FFFFFF;
-}
-
-#menu li a:hover {
-	background-color: #FFFFFF;
-	color: #000000;
+#menu a:hover {
+        background-color: #FFFFFF;
+        color: #000000;
+        border: 1px solid #959596;
 }
 
 
@@ -121,4 +110,15 @@ body {
 	text-align: center;
 	display: block;
 	position:relative;
+}
+
+#score_table table{
+  width: 100%;
+  text-align: left;
+}
+
+#score_table_title {
+  background: #000000;
+  color:  #FFFFFF;
+  font-weight: bold;
 }
