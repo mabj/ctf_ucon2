@@ -1,9 +1,9 @@
 <% i = 0 %>
 <div id="score_table">
   <table width="100%">
-    <tr id="score_table_title"><td>Event Number</td><td>Name</td><td>Description</td> <td> Date </td></tr>
+    <tr id="score_table_title"><td>#</td><td>Name</td><td>Description</td> <td> Date </td></tr>
     <% @logs.each do |log| %>
-      <tr <% if i%2 %> id="score_table_line" <% end %> ><td>#<%= i += 1 %></td><td><%= log.event_name  %></td><td><%= log.event_description %></td><td><%= log.created_at %></td></tr>
+      <tr <% if i%2 %> id="score_table_line" <% end %> ><td>#<%= i += 1 %></td><td><%= log.event_name  %></td><td><%= log.event_description %></td><td><%= log.created_at.strftime("%H:%m:%S") %></td></tr>
     <% end %>
   </table>
 </div>
