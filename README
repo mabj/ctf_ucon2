@@ -22,7 +22,19 @@ Format                          [X]
 Heap                            [!]
 Stack                           [X]
 Interface                       [X]
+Environment                     [X]
 -------------------------------------
+
+-------------------------------------
+     .:: Refactoring Cicle ::.
+-------------------------------------
+Directories Organization        []
+Shell Scripts                   []
+Init Scripts                    []
+Documentations                  []
+Dependency List                 []
+-------------------------------------
+
 
 
 18 Janeiro 2009                        Marcos Alvares <marcos.alvares at gmail>
