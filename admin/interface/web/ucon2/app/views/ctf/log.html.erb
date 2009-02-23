@@ -3,7 +3,7 @@
   <table width="100%">
     <tr id="score_table_title"><td>Event Number</td><td>Name</td><td>Description</td> <td> Date </td></tr>
     <% @logs.each do |log| %>
-      <tr <% if i%2 %> id="score_table_line" <% end %> ><td>#<%= i += 1 %></td><td><%= log.name  %></td><td><%= log.description %></td><td><%= log.created_at %></td></tr>
+      <tr <% if i%2 %> id="score_table_line" <% end %> ><td>#<%= i += 1 %></td><td><%= log.event_name  %></td><td><%= log.event_description %></td><td><%= log.created_at %></td></tr>
     <% end %>
   </table>
 </div>

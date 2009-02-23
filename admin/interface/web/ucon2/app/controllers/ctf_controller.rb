@@ -9,7 +9,7 @@ class CtfController < ApplicationController
   end
 
   def log
-    @logs = CtfLog.find :all, :order => "created_at", :limit => 20
+    @logs = CtfLog.find :all, :order => "created_at", :limit => 10
     render :layout => false
   end
 
