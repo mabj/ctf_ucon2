@@ -3,7 +3,7 @@
   <table width="100%">
     <tr id="score_table_title"><td>Rank</td><td>Name</td><td>Score</td></tr>
     <% @users.each do |user| %>
-      <tr <% if i%2 %> id="score_table_line" <% end %> ><td>#<%= i += 1 %></td><td>mabj</td><td>22 point(s)</td></tr>
+      <tr <% if i%2 %> id="score_table_line" <% end %> ><td>#<%= i += 1 %></td><td><%= user.name %></td><td><%= user.score %> point(s)</td></tr>
     <% end %>
   </table>
 </div>

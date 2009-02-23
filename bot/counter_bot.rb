@@ -41,7 +41,9 @@ class CTFBot
   def __create_user_if_not_exists (user_name = '')
     rows = @dbh.execute('select name, mail from users where name = ?', user_name)
     if rows.size.zero?
-      @logger.info("Creating new user [#{user_name}]")
+      msg = "Creating new user [#{user_name}]"
+      @logger.info(msg)
+      __log_message('CREATEUSER', msg)
       @dbh.execute('insert into users values (NULL, ?, "automatic@mail", ?, ?)', user_name, Time.now.strftime("%Y-%m-%d %H:%M:%S"), Time.now.strftime("%Y-%m-%d %H:%M:%S"))
     end
   end
@@ -49,12 +51,18 @@ class CTFBot
   def __register_user_point(challenge_id = 0, user_name = '')
     rows = @dbh.execute('select user_id, challenge_id from challenges_users where user_id IN (select id from users where name = ?) AND challenge_id = ?', user_name, challenge_id)
     if rows.size.zero?
-      @logger.info("Mark a point to user: #{user_name}")
+      msg = "Mark a point to user: #{user_name}"
+      @logger.info(msg)
+      __log_message('MARKPOINT', msg)
+
       rows = @dbh.execute("select id from users where name = ?", user_name)
       @dbh.execute('insert into challenges_users values (?, ?, ?, ?)',rows[0][0], challenge_id, Time.now.strftime("%Y-%m-%d %H:%M:%S"), Time.now.strftime("%Y-%m-%d %H:%M:%S"))
     end
   end
-
+  def __log_message (event_name = '', event_description = '')
+    @dbh.execute('insert into ctf_logs values (NULL, ?, ?, ?, ?)', event_name.to_s, event_description.to_s, Time.now.strftime("%Y-%m-%d %H:%M:%S"), Time.now.strftime("%Y-%m-%d %H:%M:%S"))
+  end
+  
   def __update_user_score(user_home = '')
     user = user_home.split('/').last
     __create_user_if_not_exists(user)

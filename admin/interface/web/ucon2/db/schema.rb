@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090217171959) do
+ActiveRecord::Schema.define(:version => 20090217171965) do
 
   create_table "challenges", :force => true do |t|
     t.string   "name"
@@ -29,6 +29,13 @@ ActiveRecord::Schema.define(:version => 20090217171959) do
 
   add_index "challenges_users", ["challenge_id", "user_id"], :name => "index_challenges_users_on_challenge_id_and_user_id"
   add_index "challenges_users", ["user_id"], :name => "index_challenges_users_on_user_id"
+
+  create_table "ctf_logs", :force => true do |t|
+    t.string   "event_name"
+    t.string   "event_description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "name"
