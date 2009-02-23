@@ -1,0 +1,7 @@
+
+0 -> Rodar script para setupar o ambiente
+1 -> Criar database através do ActiveRecord::Migrations do rails
+2 -> Iniciar Bot de contagem de pontos
+3 -> Inciar sistema WEB
+4 -> Iniciar sistema Telnetd
+5 -> Criar Usuarios do sistema

@@ -19,11 +19,10 @@ cp -af ../format/challenge_03.c ./ctf_ucon2/admin/code/vulndev/challenge_09.c
 cp -af ../stack/challenge_06.c ./ctf_ucon2/admin/code/vulndev/challenge_10.c
 cp -af ../stack/challenge_05.c ./ctf_ucon2/admin/code/vulndev/challenge_11.c
 
-install -d ./ctf_ucon2/admin/interface/telnetd
-install -d ./ctf_ucon2/admin/interface/web
-cp -af interface/telnetd/telnetd.rb ./ctf_ucon2/admin/interface/telnetd/
-cp -af interface/telnetd/score.erb ./ctf_ucon2/admin/interface/telnetd/
-cp -af interface/web/ucon2 ./ctf_ucon2/admin/interface/web/
+install -d ./ctf_ucon2/interface/telnetd
+install -d ./ctf_ucon2/interface/web
+cp -af interface/telnetd/* ./ctf_ucon2/interface/telnetd/
+cp -af interface/web/ucon2/* ./ctf_ucon2/interface/web/
 
 install -d ./ctf_ucon2/bot
 cp -af ./../bot/counter_bot* ./ctf_ucon2/bot/

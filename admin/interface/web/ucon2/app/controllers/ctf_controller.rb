@@ -1,7 +1,7 @@
 class CtfController < ApplicationController
 
   def index
-    @users = User.find(:all).sort {|a, b| a.score <=> b.score }
+    @users = User.find(:all).sort {|a, b| a.score <=> b.score }.reverse
   end
 
   def about
@@ -13,7 +13,7 @@ class CtfController < ApplicationController
   end
 
   def score
-    @users = User.find(:all).sort {|a, b| a.score <=> b.score }
+    @users = User.find(:all).sort {|a, b| a.score <=> b.score }.reverse
     render :layout => false
   end
 end

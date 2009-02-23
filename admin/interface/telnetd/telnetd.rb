@@ -13,7 +13,7 @@ require 'sqlite3'
 
 LIMIT_USERS = 100
 SLEEP_TIME  = 5
-SQLITE_DATABASE_FILE = '../../../bot/ucon2.db'
+SQLITE_DATABASE_FILE = '../../bot/ucon2.db'
 PORT = 23
 
 server = TCPServer.new(PORT)

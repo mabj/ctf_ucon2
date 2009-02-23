@@ -40,7 +40,7 @@ int __is_valid_dynamic_token (char *password) {
   char *token = (char *) malloc(30*sizeof(char));
   time_t time1;
   memset((char *)token, '\0', 30);
-  sprintf(token, "%s_%d", JOKER, time(&time1));
+  sprintf(token, "%s_%d", JOKER, (int) time(&time1));
 
   if (! strncmp(token, password, 18) ) {
     return TRUE;

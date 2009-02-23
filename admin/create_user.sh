@@ -44,7 +44,7 @@ ${GROUPADD} ${1}
 
 ${ECHO} "[+] Adding user ..."
 RANDPASS=`${PASSWORD}`
-${USERADD} ${1} -d /home/${1} -m -g ${1} -p $(${OPENSSL} passwd -1 ${RANDPASS})
+${USERADD} ${1} -d /home/${1} -s /bin/bash -m -g ${1} -p $(${OPENSSL} passwd -1 ${RANDPASS})
 ${CHMOD} -R 0700 /home/${1}
 
 if [ -e ${WORKDIR} ]; then

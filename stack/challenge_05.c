@@ -62,7 +62,7 @@ void __fill_air_space (unsigned int *air_space) {
     check_positions[i] = canary_id;
     dynamic_canaries_value[i] = air_space[canary_id];
     #ifdef DEBUG
-      printf("\t[+] Canary -> id: %d\t address: %#x\t value: %#x\n", canary_id, &air_space[canary_id], air_space[canary_id]);
+      printf("\t[+] Canary -> id: %d\t address: %#x\t value: %#x\n", canary_id, &air_space[canary_id], (unsigned int) air_space[canary_id]);
     #endif
     
   }
