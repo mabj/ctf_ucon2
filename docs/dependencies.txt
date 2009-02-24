@@ -1,0 +1,12 @@
+::. uCon Capture The Flag software dependencies .::
+
+- Linux Environment
+- Ruby
+- Ruby on Rails
+- Sqlite3
+- Rubygems
+- libsqlite3-ruby
+- Mongrel
+- GCC
+- GnuMake
+- OpenSSL
