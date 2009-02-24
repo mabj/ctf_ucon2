@@ -168,3 +168,5 @@ build_crackme_challenges ${1}
 build_vulndev_challenges ${1}
 copy_workdir_to_user_home ${1}
 sending_user_password_mail ${1}
+
+${ECHO} "DONE ! \O/"

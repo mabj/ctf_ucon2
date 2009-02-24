@@ -29,10 +29,11 @@ Environment                     [X]
      .:: Refactoring Cicle ::.
 -------------------------------------
 Directories Organization        [X]
-Shell Scripts                   [/]
+Shell Scripts                   [X]
 Init Scripts                    []
 Documentations                  []
 Dependency List                 []
+License Information             []
 -------------------------------------
 
 

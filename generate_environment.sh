@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 INSTALL="/usr/bin/install -d"
 FIND="/usr/bin/find"
@@ -20,6 +20,7 @@ build_admin_directory() {
   ${CP} ./admin/remove_user.sh ${WORKDIR}/admin
   ${CP} ./admin/sendEmail-v1.55/ ${WORKDIR}/admin
   ${CP} ./admin/setup_environment.sh ${WORKDIR}/admin
+  ${CP} ./admin/firewall-rules ${WORKDIR}/admin
 }
 
 copy_crackme_sources() {
@@ -89,4 +90,5 @@ build_bot_directory
 compress_build_directory
 cleanup_tmp_build_directory
 print_finish_message
+
 ${ECHO} "DONE ! \O/"
