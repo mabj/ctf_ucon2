@@ -56,7 +56,7 @@ build_interface_directory() {
   ${INSTALL} ${WORKDIR}/interface/telnetd
   ${INSTALL} ${WORKDIR}/interface/web
   ${CP} interface/telnetd/* ${WORKDIR}/interface/telnetd/
-  ${CP} interface/web/ucon2/* ${WORKDIR}/interface/web/
+  ${CP} interface/web/* ${WORKDIR}/interface/web/
 }
 
 build_bot_directory() {
