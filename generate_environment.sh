@@ -1,4 +1,5 @@
 #!/bin/sh
+
 INSTALL="/usr/bin/install -d"
 FIND="/usr/bin/find"
 RM="/bin/rm -rf"
