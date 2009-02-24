@@ -6,7 +6,7 @@ RM="/bin/rm -rf"
 WORKDIR="./ctf_ucon2_build"
 CP="/bin/cp -af"
 ECHO="/bin/echo -e"
-TAR="/bin/tar cfz"
+TAR="/bin/tar cfj"
 
 cleanup_environment() {
   ${ECHO} '[+] Cleanup the environment for a new build ...'

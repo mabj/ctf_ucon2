@@ -122,3 +122,7 @@ body {
   color:  #FFFFFF;
   font-weight: bold;
 }
+
+#score_table_line {
+  background: #EEEEEE;
+}
