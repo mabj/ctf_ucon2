@@ -104,7 +104,7 @@ class CTFBot
   end
 
   def __list_users()
-    Dir.glob(@home_dir + "\/*")
+    Dir.glob(@home_dir + "\/*").select {|x| x.match("aquota.user").nil? }
   end
 end
 
