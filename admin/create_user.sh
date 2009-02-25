@@ -50,7 +50,7 @@ add_user_and_group() {
   ${USERADD} ${1} -d /home/${1} -s /bin/bash -m -g ${1} -p $(${OPENSSL} passwd -1 ${RANDPASS})
   
   ${ECHO} "[+] Adding user ${1} to administrative group ctf ..."
-  ${ADDGROUP} ${1} ctf
+  ${ADDGROUP} ${1} ctf >> /dev/null
   ${CHMOD} -R 0700 /home/${1}
   sending_user_password_mail ${1} ${2} ${RANDPASS}
 }

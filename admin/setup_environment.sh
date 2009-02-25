@@ -30,7 +30,6 @@ ARP="/usr/sbin/arp -s"
 GROUPADD="/usr/sbin/groupadd"
 ETHERNET_INTERFACE="eth0"
 GREP='/bin/grep'
-WC='/usr/bin/wc -l'
 
 # Network informations
 IPADDR=`/sbin/ifconfig ${ETHERNET_INTERFACE} | /bin/grep "inet addr" | /usr/bin/awk -F " " '{print $2}' | /usr/bin/awk -F ":" '{print $2}'`
@@ -85,7 +84,7 @@ create_ctf_group() {
 
 set_fork_bomb_protection() {
     ${ECHO} "[+] Setting up the fork bomb protection"
-  if [ `${CAT} /etc/security/limits.conf | ${GREP} ctf | ${WC}` != "0" ]; then
+  if [ ! `${CAT} /etc/security/limits.conf | ${GREP} ctf` ]; then
     ${ECHO} "@ctf     hard     nproc    50" >> /etc/security/limits.conf
     ${ECHO} "@ctf     hard     cpu      2" >> /etc/security/limits.conf
   fi
