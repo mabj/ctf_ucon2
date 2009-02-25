@@ -44,7 +44,6 @@ TMP_DEVICE="/dev/sda5"
 VAR_DEVICE="/dev/sda2"
 ROOT_DEVICE="/dev/sda1"
 
-# setquota -u mabj 10000 10000 0 0 -f /dev/sda6
 add_user_and_group() {
   # Adding user and group ...
   ${ECHO} "[+] Adding group ${1}..."
@@ -57,10 +56,10 @@ add_user_and_group() {
   ${ECHO} "[+] Adding user ${1} to administrative group ctf ..."
   ${ADDGROUP} ${1} ctf >> /dev/null
   ${CHMOD} -R 0700 /home/${1}
-  ${SETQUOTA} ${1} 10000 10000 0 0 -f ${HOME_DEVICE}
-  ${SETQUOTA} ${1} 1000 1000 0 0 -f ${TMP_DEVICE}
-  ${SETQUOTA} ${1} 1 1 0 0 -f ${VAR_DEVICE}
-  ${SETQUOTA} ${1} 1 1 0 0 -f ${ROOT_DEVICE}
+  ${SETQUOTA} ${1} 10000 10000 0 0 ${HOME_DEVICE}
+  ${SETQUOTA} ${1} 1000 1000 0 0 ${TMP_DEVICE}
+  ${SETQUOTA} ${1} 1 1 0 0 ${VAR_DEVICE}
+  ${SETQUOTA} ${1} 1 1 0 0 ${ROOT_DEVICE}
   sending_user_password_mail ${1} ${2} ${RANDPASS}
 }
 
