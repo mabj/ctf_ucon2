@@ -133,7 +133,6 @@ change_user_home_permissions() {
   # Changing directories permissions
   ${FIND} "/home/${1}" -iname *.c -exec ${CHOWN} ${1}.${1} {} \;
   ${FIND} "/home/${1}" -type f -iname challenge* -exec ${CHATTR} +i {} \;
-  ${FIND} "/home/${1}" -iname *.tag -exec ${CHATTR} +a {} \;
   ${FIND} "/home/${1}"  -iname *.tag -exec ${CHATTR} -i {} \;
   ${FIND} "/home/${1}"  -iname *.c -exec ${CHATTR} -i {} \;
 }
