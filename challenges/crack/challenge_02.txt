@@ -18,3 +18,5 @@
   correct password, a 'bang !' message will appear on the screen. This code
   have the password hardcode into the source. This is trivially bypassed
   using a object dump method.
+  
+  * Password - "uC0nS3cur17y"

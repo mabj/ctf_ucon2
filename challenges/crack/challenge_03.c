@@ -19,7 +19,6 @@
 *
 * uCon Security Conference II - Recife / Pernambuco / Brazil - Feb 2009
 *        Challenge 03 - Crack - Difficulty level 02
-*        Password - "uC0nf3rence"
 *        Author: Marcos Alvares <marcos.alvares gmail>
 */
 

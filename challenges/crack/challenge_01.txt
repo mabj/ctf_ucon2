@@ -19,3 +19,4 @@
   is strings dump safe and use a simple XOR to obfuscate the password. The
   encrypted password contain non printable characters making this code a
   little more difficulty to exploit with trivial methods.
+  Password - "pa55uc0_"

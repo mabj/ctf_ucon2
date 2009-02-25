@@ -18,3 +18,5 @@
   correct password, a 'bang !' message will appear on the screen. This code
   have a salt on the password. The password and the salt are printed on the
   screen using a object dump method.
+  
+  Password - "uC0nf3rence"

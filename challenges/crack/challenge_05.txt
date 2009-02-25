@@ -18,3 +18,4 @@
   correct password, a 'bang !' message will appear on the screen. This code
   changes the password with the time of machine like a bank token. This code
   uses a small obfuscation function with a rot13 algorithm.
+  * Password - "_1c0n__"

@@ -20,6 +20,8 @@
   force the attacker to do reverse engineer to discover the salt of the
   password and a little script to brute force under a future time like the
   script above.
+  Password Seed - "_uC0n_"
+
 
 ########## [Brute Force Crack]
 #!/bin/bash

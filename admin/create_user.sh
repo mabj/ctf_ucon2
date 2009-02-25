@@ -18,7 +18,7 @@
 # Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
 #
 
-GCC="/usr/bin/gcc -fno-stack-protector -ggdb -o "
+GCC="/usr/bin/gcc -fno-stack-protector "
 MAKE="/usr/bin/make"
 INSTALL="/usr/bin/install -d"
 FIND="/usr/bin/find"
@@ -93,7 +93,7 @@ build_crackme_challenges() {
     ${CHOWN} ${1}.${1} "${WORKDIR}/crackme"
     ${CHOWN} -R ${1}.${1} "${WORKDIR}/crackme/${PROGRAM}"
     # Compile challenge and configure its permissions
-    ${GCC} "${WORKDIR}/crackme/${PROGRAM}/${PROGRAM}" ${i}
+    ${GCC} -o "${WORKDIR}/crackme/${PROGRAM}/${PROGRAM}" ${i}
     ${CHOWN} ${PROGRAM}.${PROGRAM} "${WORKDIR}/crackme/${PROGRAM}/${PROGRAM}"
     ${CHMOD} 4555 "${WORKDIR}/crackme/${PROGRAM}/${PROGRAM}"
     ${CHATTR} +i "${WORKDIR}/crackme/${PROGRAM}/${PROGRAM}"
@@ -116,7 +116,7 @@ build_vulndev_challenges() {
     ${CHOWN} ${1}.${1} "${WORKDIR}/vulndev"
     ${CHOWN} -R ${1}.${1} "${WORKDIR}/vulndev/${PROGRAM}"
     # Compile challenge and configure its permissions
-    ${GCC} "${WORKDIR}/vulndev/${PROGRAM}/${PROGRAM}" ${i}
+    ${GCC} -ggdb -o "${WORKDIR}/vulndev/${PROGRAM}/${PROGRAM}" ${i}
     ${CP} ${i} "${WORKDIR}/vulndev/$PROGRAM/"
     ${CHOWN} ${PROGRAM}.${PROGRAM} "${WORKDIR}/vulndev/${PROGRAM}/${PROGRAM}"
     ${CHMOD} 4555 "${WORKDIR}/vulndev/${PROGRAM}/${PROGRAM}"
@@ -132,6 +132,10 @@ build_vulndev_challenges() {
 change_user_home_permissions() {
   # Changing directories permissions
   ${FIND} "/home/${1}" -iname *.c -exec ${CHOWN} ${1}.${1} {} \;
+  ${FIND} "/home/${1}" -type f -iname challenge* -exec ${CHATTR} +i {} \;
+  ${FIND} "/home/${1}" -iname *.tag -exec ${CHATTR} +a {} \;
+  ${FIND} "/home/${1}"  -iname *.tag -exec ${CHATTR} -i {} \;
+  ${FIND} "/home/${1}"  -iname *.c -exec ${CHATTR} -i {} \;
 }
 
 copy_workdir_to_user_home() {
