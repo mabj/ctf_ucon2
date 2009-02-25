@@ -83,8 +83,9 @@ create_ctf_group() {
 }
 
 set_fork_bomb_protection() {
-    ${ECHO} "[+] Setting up the fork bomb protection"
-  if [ ! `${CAT} /etc/security/limits.conf | ${GREP} ctf` ]; then
+  ${ECHO} "[+] Setting up the fork bomb protection"
+  ULIMTS=`${CAT} /etc/security/limits.conf | ${GREP} ctf`
+  if [ "${ULIMITS}" != "2" ]; then
     ${ECHO} "@ctf     hard     nproc    50" >> /etc/security/limits.conf
     ${ECHO} "@ctf     hard     cpu      2" >> /etc/security/limits.conf
   fi
