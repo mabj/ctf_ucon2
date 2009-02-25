@@ -34,9 +34,11 @@ OPENSSL="/usr/bin/openssl"
 PASSWORD="${OPENSSL} rand -base64 8"
 USERADD="/usr/sbin/useradd"
 GROUPADD="/usr/sbin/groupadd"
+ADDGROUP="/usr/sbin/addgroup"
 ECHO="/bin/echo -e"
 SENDMAIL="./sendEmail-v1.55/sendEmail"
 ETHERNET_INTERFACE="eth0"
+
 
 add_user_and_group() {
   # Adding user and group ...
@@ -46,7 +48,11 @@ add_user_and_group() {
   ${ECHO} "[+] Adding user ${1}..."
   RANDPASS=`${PASSWORD}`
   ${USERADD} ${1} -d /home/${1} -s /bin/bash -m -g ${1} -p $(${OPENSSL} passwd -1 ${RANDPASS})
+  
+  ${ECHO} "[+] Adding user ${1} to administrative group ctf ..."
+  ${ADDGROUP} ${1} ctf
   ${CHMOD} -R 0700 /home/${1}
+  sending_user_password_mail ${1} ${2} ${RANDPASS}
 }
 
 cleanup_workdir() {
@@ -145,7 +151,7 @@ sending_user_password_mail() {
   ${ECHO} -n "Congratulations ${1}, you have been subscribed to the uCon Capture The Flag 2009 edition. " > ${MAILDIR}${MESSAGE}
   ${ECHO} -n "You should SSH the CTF machine in order to change the default password.\n\n" >> ${MAILDIR}${MESSAGE}
   ${ECHO} -n "Following up are user's credentials:\n\n" >> ${MAILDIR}${MESSAGE}
-  ${ECHO} -n "Login: ${1}\nPassword: ${RANDPASS}\nCTF machine: ${IPADDR} [ctf.ucon-conference.org]\n\n" >> ${MAILDIR}${MESSAGE}
+  ${ECHO} -n "Login: ${1}\nPassword: ${3}\nCTF machine: ${IPADDR} [ctf.ucon-conference.org]\n\n" >> ${MAILDIR}${MESSAGE}
   ${ECHO} -n "Good Luck!!!\n\n--\nCTF Team @ uCon Security Conference 2009" >> ${MAILDIR}${MESSAGE}
 
   if [ -e ./sendEmail-v1.55/sendEmail ]; then
@@ -179,12 +185,11 @@ if [ -e "/home/${1}" ]; then
   exit 1
 fi
 
-add_user_and_group ${1}
+add_user_and_group ${1} ${2}
 cleanup_workdir
 create_workdir ${1}
 build_crackme_challenges ${1}
 build_vulndev_challenges ${1}
 copy_workdir_to_user_home ${1}
-sending_user_password_mail ${1}
 
 ${ECHO} "DONE ! \O/"
