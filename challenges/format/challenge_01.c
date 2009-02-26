@@ -64,6 +64,10 @@ void __create_tag (char *id) {
   memset(tag_name, '\0', 24);
   snprintf(tag_name,24, "./%s.tag", id);
   fd = fopen(tag_name, "w");
-  fprintf(fd, "Bang!!\n");
-  if (fd != NULL) fclose(fd);
+  if (fd != NULL) {
+    fprintf(fd, "Bang!!\n");
+    fclose(fd);
+  } else {
+    printf("[!] Error on open a challenge tag file.\n");
+  }
 }
